@@ -7,14 +7,17 @@ const HeroSection = () => {
     <div
       className="relative overflow-hidden bg-hero"
       style={{
-        backgroundImage: `linear-gradient(rgba(26,42,58,0.45), rgba(26,42,58,0.45)), url('/civ3-assets/civ3_bg.jpg')`,
+        backgroundImage: `linear-gradient(rgba(26,42,58,0.45), rgba(26,42,58,0.45)), url(${import.meta.env.BASE_URL}civ3-assets/civ3_bg.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-50 pointer-events-none">
+      {/* Colored overlay to ensure consistent tint (above image, below content) */}
+      <div className="absolute inset-0 bg-[rgba(26,42,58,0.90)] z-10 pointer-events-none" aria-hidden="true" />
+
+      {/* Background Pattern (on top of overlay but still subtle) */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none z-20">
         <svg className="w-full h-full" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
             <g fill="rgb(251 191 36)" fillOpacity="0.05">
@@ -24,7 +27,7 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="relative container mx-auto px-4 py-20">
+      <div className="relative z-30 container mx-auto px-4 py-20">
         <div className="text-center space-y-8">
           {/* Main Hero Content */}
           <div className="space-y-4">

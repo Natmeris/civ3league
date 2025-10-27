@@ -272,6 +272,19 @@
   
   .bg-hero {
     background: var(--gradient-hero);
+    position: relative;
+  }
+
+  /* Ensure a reliable colored overlay over hero backgrounds using a pseudo-element
+     This is more robust than relying on inline overlays and guarantees the tint
+     appears above the background image but below the content. */
+  .bg-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(26,42,58,0.45);
+    z-index: 10;
+    pointer-events: none;
   }
   
   .bg-gaming-card {
