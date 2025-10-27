@@ -48,7 +48,7 @@ export default function TeamGenerator() {
     optionA: { sum1: number; sum2: number; avg1: number; avg2: number; p1: number; p2: number; delta: number };
     optionB: { sum1: number; sum2: number; avg1: number; avg2: number; p1: number; p2: number; delta: number };
   } | null>(null);
-  const [warning, setWarning] = useState<string | null>(null);
+  
 
   useEffect(() => {
     setLoading(true);
@@ -84,12 +84,10 @@ export default function TeamGenerator() {
       return next;
     });
     setResult(null);
-    setWarning(null);
   };
 
   const compute = () => {
     setResult(null);
-    setWarning(null);
     // Build rated players list
     const entered = names.map((n) => n.trim()).filter((n) => n.length > 0);
     // Duplicate detection (case-insensitive), but allow duplicates for 'New Player'
@@ -137,25 +135,7 @@ export default function TeamGenerator() {
     rated.sort((a, b) => b.rating - a.rating);
     const captain1 = rated[0];
     const captain2 = rated[1];
-    // If user entered captains wrong (first two inputs are not the two highest-rated), warn and repopulate fields
-    const i0 = names[0]?.trim().toLowerCase();
-    const i1 = names[1]?.trim().toLowerCase();
-    const top1 = captain1.name.toLowerCase();
-    const top2 = captain2.name.toLowerCase();
-    const firstTwoAreTopTwo = (i0 === top1 && i1 === top2) || (i0 === top2 && i1 === top1);
-    if (!firstTwoAreTopTwo) {
-      // Rebuild names placing captains in the first two slots and keep the rest in original order without duplicates
-      const remaining = names
-        .map((n) => n.trim())
-        .filter((n) => n.length > 0)
-        .filter((n) => n.toLowerCase() !== top1 && n.toLowerCase() !== top2);
-      const newNames = Array(8).fill("");
-      newNames[0] = captain1.name;
-      newNames[1] = captain2.name;
-      for (let i = 0; i < Math.min(6, remaining.length); i++) newNames[2 + i] = remaining[i];
-      setNames(newNames);
-      setWarning(`Adjusted captains: ${captain1.name} (Captain 1) and ${captain2.name} (Captain 2).`);
-    }
+    // Keep user-specified captain positions — do not auto-reorder inputs or show an adjusted-captains warning.
     const rest = rated.slice(2);
     const k = rest.length / 2;
     if (!Number.isInteger(k)) {
@@ -281,7 +261,6 @@ export default function TeamGenerator() {
                         setNames(Array(8).fill(""));
                         setResult(null);
                         setError(null);
-                        setWarning(null);
                       }}
                     >
                       <SelectTrigger className="w-full">
@@ -318,7 +297,7 @@ export default function TeamGenerator() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {names.map((val, i) => (
                     <div key={i} className="space-y-1">
-                      <label className="block text-xs text-muted-foreground">Player {i + 1}{i === 0 ? " (Captain 1)" : i === 1 ? " (Captain 2)" : ""}</label>
+                      <label className="block text-xs text-muted-foreground">Player {i + 1}</label>
                       <Input
                         list="player-suggestions"
                         placeholder="Type a player name"
@@ -341,9 +320,6 @@ export default function TeamGenerator() {
                   </Button>
                   {error && (
                     <Badge variant="destructive" className="text-white mt-2">{error}</Badge>
-                  )}
-                  {warning && !error && (
-                    <span className="text-sm text-yellow-400 block mt-2">{warning}</span>
                   )}
                 </div>
               </div>
