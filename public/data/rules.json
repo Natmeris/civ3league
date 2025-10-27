@@ -1,0 +1,103 @@
+[
+  {
+    "icon": "Shield",
+    "title": "Host & Game Setup",
+    "rules": [
+      "Hosts decide before the game starts if the game is a ladder game.",
+      "A game with non-banned players who all (or all except one) have at least one game recorded on the ladder website's leaderboards or Steam chat reports channel is assumed to be a ladder game unless otherwise specified.",
+      "Ladder games follow standard rules. Hosts may amend these rules if they inform players before the game begins.",
+      "As a player, if you check in to the multiplayer setup screen, you agree to standard ladder rules plus any amendments made by the host."
+    ]
+  },
+  {
+    "icon": "Clock",
+    "title": "Disputes & Moderation",
+    "rules": [
+      "In the case of small disputes and judgments, the host should decide the outcome. For example, whether to allow a particular player to play, or whether to reload in the case of a bug.",
+      "If you disagree with the host’s decision, you may appeal to a moderator after the game.",
+      "In the event of a dispute regarding the rules, the decision will be settled by moderators. Moderators can decide the outcome of the match (one team wins, or a scrap).",
+      "Moderators may also ban players who have broken the rules."
+    ]
+  },
+  {
+    "icon": "Users",
+    "title": "Game Types & End Conditions",
+    "rules": [
+      "Games may be played as free-for-alls or in teams. Teams must have an even number of players.",
+      "2v3 or 3v4 matches cannot be reported to the ladder, nor can games with more than 2 teams.",
+      "Team games end when one team is eliminated, when the turn counter expires, when one team agrees to concede, or if players agree to a scrap.",
+      "In a free-for-all, the game ends when only one player remains, when players agree to a scrap, when the turn timer expires, or if all living players unanimously agree to 'call the game'.",
+      "Calling the game means ending it and assigning placement values for living players based on mutual agreement. The placement of dead players cannot be changed."
+    ]
+  },
+  {
+    "icon": "AlertTriangle",
+    "title": "Quitting & Substitutions",
+    "rules": [
+      "Quits will be logged. In the case of a quit, players must either agree to a scrap/concession, play on, or find a substitute (of equal or lower ELO) for the player who quits. The game must still be reported.",
+      "The second quit in 4 months results in an automatic 36-hour ban. The third quit is a 72-hour ban. Any additional quits result in a 5-day ban.",
+      "These bans are effective as soon as they are announced by a moderator in the mod rulings Steam channel. Games played with a banned player during their ban are non-ladder.",
+      "Moderators may also issue quits or bans for other bad behaviour such as teamkilling or excessive flaming."
+    ]
+  },
+  {
+    "icon": "Swords",
+    "title": "Concessions & Scraps",
+    "rules": [
+      "Teams with 4 players may agree to concede as long as 3 players agree.",
+      "Teams with 3 remaining players may concede if 2 players agree.",
+      "Concessions when only 2 players remain must be unanimous.",
+      "Games with 5 or more players may be scrapped if all but one player agree or are indifferent (not one player per team).",
+      "Scrap votes with 4 or fewer players must be unanimous."
+    ]
+  },
+  {
+    "icon": "FileWarning",
+    "title": "Scoring & Turn Counter Rules",
+    "rules": [
+      "If the turn counter expires in a team game, the winner is determined by the sum of all living players’ scores on each team plus the decayed scores of dead players via the histogram.",
+      "In modern mode, if a player dies, that player’s score (or decayed score) is cut in half.",
+      "If a player loses their capital, they have 5 turns to retake or replant it. If not done by the end of the 5th turn, their score (or decayed score) is cut in half.",
+      "Scoring rules for a free-for-all game must be agreed upon before the game begins."
+    ]
+  },
+  {
+    "icon": "Clock",
+    "title": "Lag, Drops & Reloads",
+    "rules": [
+      "Players who lag or drop excessively may be forced to be substituted. Hosts, teams, and moderators should work together to make that decision.",
+      "During a reload, both teams have 15 minutes to gather their team.",
+      "A substitute of no higher than 150 ELO above the original player may be used.",
+      "If a player subs, the game is still reported. If the subber’s team wins, the game is reported with the subber. If the subber’s team loses, it is reported with the original player.",
+      "When reloading, players are strongly encouraged to repeat the same moves as before the reload. If a unit died before the reload but did not after, it must be disbanded."
+    ]
+  },
+  {
+    "icon": "AlertTriangle",
+    "title": "Prohibited Actions",
+    "rules": [
+      "Cheats, trainers, and banned bugs are prohibited.",
+      "A list of banned tactics is available externally. Notably, this includes the prohibition of end-of-turn stack attacks against cities and the abuse of the empty city bug."
+    ]
+  },
+  {
+    "icon": "MessageSquare",
+    "title": "Conduct & Behaviour",
+    "rules": [
+      "Harassment (repeated insults or flaming that the recipient does not want) in public chat groups is forbidden.",
+      "Flaming or insults toward teammates in ladder games are taken especially seriously, since it interferes with competitive teamplay.",
+      "If this happens, screenshot it and send it to a moderator."
+    ]
+  },
+  {
+    "icon": "BookOpen",
+    "title": "Spawning, Coaching & Other Guidelines",
+    "rules": [
+      "MPTs or QCs where one player spawns alone on an island, or two or more players of the same team spawn on the same island, should be automatically scrapped and are invalid reports.",
+      "If two players of opposite teams spawn alone on the same island, that game is valid and should continue normally.",
+      "Coaching is encouraged but must not interfere with fair competition.",
+      "In ladder games, if you will be receiving multiple pieces of advice from a non-teammate who has an ELO of more than 200 above yours, this must be disclosed before teams are made.",
+      "This rule set is not meant to be inclusive of all bad behavior. Players who behave poorly in ways not explicitly prohibited may be refused by other players or hosts."
+    ]
+  }
+]

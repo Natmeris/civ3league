@@ -1,0 +1,513 @@
+[
+  {
+    "id": 1,
+    "title": "Daily Ladder/Unranked Games",
+    "date": "April 1, 2020 – January 31, 2022",
+    "status": "completed",
+    "description": "The Civplayers ladder is proud to announce the return of the clan challenge cup! More details to follow.",
+    "winners": "N/A",
+    "participants": "All",
+    "prize": "Clan Challange Cup",
+    "youtubeLink": "N/A",
+    "twitchLink": "N/A",
+    "longDescription": "N/A",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "The Civplayers ladder is proud to announce the return of the clan challenge cup! More details to follow."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "'Modern' Mod Tournament",
+    "date": "May 23, 2020 – May 24, 2020",
+    "status": "completed",
+    "description": "A Tournament for our latest MP mod, hosted by Suede. Games to be posted on youtube. Check Discord for updates and chat and/or Steam chatroom.",
+    "winners": "N/A",
+    "participants": "N/A",
+    "prize": "N/A",
+    "longDescription": "N/A",
+    "youtubeLink": "N/A",
+    "twitchLink": "N/A",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "A Tournament for our latest MP mod, hosted by Suede. Games to be posted on youtube. Check Discord for updates and chat and/or Steam chatroom."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "CLAN CHAMPIONSHIP CUP",
+    "date": "December 18, 2020 – December 20, 2020",
+    "status": "completed",
+    "description": "The return of the famous CCC! There will be 4 clans facing off to be the best.",
+    "winners": "N/A",
+    "participants": "N/A",
+    "prize": "Clan Championship Cup",
+    "longDescription": "",
+    "youtubeLink": "N/A",
+    "twitchLink": "N/A",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "The return of the famous CCC! There will be 4 clans facing off to be the best. A series of 3v3s and 4v4s will decide, using the mods MPT, QC, Modern, and Future. Additionally, side games held of a variety of modes will be hosted. The CCC scheduling is being managed by Hoffman."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Weekly New Player Games",
+    "date": "April 4, 2021 – April 11, 2021",
+    "status": "completed",
+    "description": "MPTs and QCs are hosted Sunday at 4pm EDT (after Suede’s stream). Modern/Future games are hosted Wednesday at 9pm EDT.",
+    "winners": "N/A",
+    "participants": "New Players",
+    "prize": "N/A",
+    "longDescription": "",
+    "youtubeLink": "N/A",
+    "twitchLink": "N/A",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "MPTs and QCs are hosted Sunday at 4pm EDT (after Suede’s stream). Modern/Future games are hosted Wednesday at 9pm EDT."
+      },
+      {
+        "type": "paragraph",
+        "text": "These games are exclusively for new players, so only people below 1400 ELO. It’s a space for you to experiment and try different mods and playstyles without the pressure of a ladder game with veteran players. Veteran players will stop by in the discord to offer coaching, if you stream there."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "CIV3 Hunger Games",
+    "date": "November 14, 2021 – February 20, 2022",
+    "status": "completed",
+    "description": "2v2 MPT-style Cash Tournament, run by Hardrada_1066.",
+    "winners": "1st Suede + Hoffman | 2nd sdn + Archreaver",
+    "participants": "24 (12 Teams)",
+    "prize": "$250USD",
+    "longDescription": "",
+    "youtubeLink": "https://www.youtube.com/channel/UC2AuVRKXclTOjg6s3VMJgqg",
+    "twitchLink": "https://www.twitch.tv/hardrada_1066",
+    "bracket": {
+      "rounds": [
+        {
+          "name": "Best Of 1",
+          "matches": [
+            {
+              "p1": "macluci",
+              "p2": "readviv",
+              "score": "0-1",
+              "winner": "p2"
+            },
+            {
+              "p1": "sdnarch",
+              "p2": "cherab",
+              "winner": "p2",
+              "score": "0-1"
+            },
+            {
+              "p1": "suehoff",
+              "p2": "obihalu",
+              "winner": "p2",
+              "score": "0-1"
+            },
+            {
+              "p1": "whipug",
+              "p2": "kelrick",
+              "winner": "p2",
+              "score": "N/A"
+            }
+          ]
+        },
+        {
+          "name": "Best of 3",
+          "matches": [
+            {
+              "p1": "cherab",
+              "p2": "sdnarch",
+              "winner": "p2",
+              "score": "1-2"
+            },
+            {
+              "p1": "obihalu",
+              "p2": "suehoff",
+              "winner": "p2",
+              "score": "1-2"
+            }
+          ]
+        },
+        {
+          "name": "Finals (Best Of 5)",
+          "matches": [
+            {
+              "p1": "suehoff",
+              "p2": "sdnarch",
+              "winner": "p1",
+              "score": "3-1"
+            }
+          ]
+        }
+      ]
+    },
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "2v2 MPT-style Cash Tournament, run by Hardrada_1066. Prize Pool >$250USD."
+      },
+      {
+        "type": "paragraph",
+        "text": "Watch on YouTube (for information) and Twitch (for the tournament games) to keep up with the event! The scheduling is very fluid, hence the best way to catch games live is to follow the Twitch channel and keep notifications turned on. :)"
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/channel/UC2AuVRKXclTOjg6s3VMJgqg",
+        "label": "YouTube (for information)"
+      },
+      {
+        "type": "link",
+        "url": "https://www.twitch.tv/hardrada_1066",
+        "label": "Twitch (for the tournament games)"
+      },
+      {
+        "type": "paragraph",
+        "text": "You can also still watch the replays of all games here."
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/playlist?list=PLsdqOYIlGW1AxTwTCSnR_dChhBVrA7W2l",
+        "label": "Replays"
+      },
+      {
+        "type": "paragraph",
+        "text": "Scroll down for a quick overview of the tournament structure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Latest event results and standings:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Group A:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Results:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Readbob + Vivid 0 - 1 Halu + Obi\nAbhi + Elquijote 1 - 0 sdn + Archreaver\nHalu + Obi 0 - 1 sdn + Archreaver\nPug + Which 1 - 0 Vivid + Readbob\nPug + Which 0.5 > 0.5 Abhi + Elquijote\nsdn + Archreaver 1 - 0 Readbob + Vivid\nAbhi + Elquijote 0 - 1 Halu + Obi\nReadbob + Vivid 0 - 1 Abhi + Elquijote\nsdn + Archreaver 1 - 0 Pug + Which"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ruled due to scheduling issues:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Clown + Ronni 0 - 1 Readbob + Vivid\nClown + Ronni 0 - 1 sdn + Archreaver\nClown + Ronni 0 - 1 Abhi + Elquijote\nClown + Ronni 0 - 1 Pug + Which\nClown + Ronni 0 - 1 Halu + Obi\nPug + Which 0 - 1 Halu + Obi"
+      },
+      {
+        "type": "paragraph",
+        "text": "FINAL Standings:"
+      },
+      {
+        "type": "paragraph",
+        "text": "1. sdn + Archreaver 4 - 1\n2. Halu + ObiWanKenooby 4 - 1\n3. Abhimanyu + Elquijote 3.5 - 1.5\n4. Which + PrivatePug 2.5 - 2.5\n5. Readbob + Vivid 1 - 4\n6. ronni + ClownKnight 0 - 5"
+      },
+      {
+        "type": "paragraph",
+        "text": "Group B:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Results:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Suede + Hoffman 1 - 0 Rabdag + Cheeze\nRodrigo + Almeida 1 - 0 Kelso + Ricko\nKelso + Ricko 0 - 1 Suede + Hoffman\nTowel + Ztatiz 1 - 0 Rodrigo + Almeida\nRabdag + Cheeze 1 - 0 Kelso + Ricko\nSuede + Hoffman 1 - 0 maclunkey + Lucifer\nTowel + Ztatiz 0 - 1 Suede + Hoffman\nTowel + Ztatiz 1 - 0 maclunkey + Lucifer\nmaclunkey + Lucifer 1 - 0 Kelso + Ricko\nmaclunkey + Lucifer 0 - 1 Rabdag + Cheeze\nRabdag + Cheeze 1 - 0 Towel + Ztatiz\nTowel + Ztatiz 1 - 0 Kelso + Ricko "
+      },
+      {
+        "type": "paragraph",
+        "text": "FINAL Standings:"
+      },
+      {
+        "type": "paragraph",
+        "text": "1. Suede + Hoffman 5 - 0\n2. Rabdag + Cheeze 4 - 1\n3. Towel + Ztatiz 3 - 2\n4. maclunkey + Lucifer 2 - 3\n5. BossKelso + Ricko 1 - 4\n6. Rodrigo + Almeida 0 - 5\n\nwithdrew, all other teams awarded W"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tournament structure:"
+      },
+      {
+        "type": "paragraph",
+        "text": "The Tournament consists of two phases: The group stage and the bracket/playoffs stage.\nThe group stage is played single-round-robin Best-of-1 in 2 Groups with 6 Teams each. All teams advance from the group stage.\nThe current standings of both groups can be seen above."
+      },
+      {
+        "type": "paragraph",
+        "text": "The playoffs:"
+      },
+      {
+        "type": "image",
+        "src": "https://i.imgur.com/WnCoQpU.png",
+        "alt": "Playoffs"
+      },
+      {
+        "type": "paragraph",
+        "text": "Information regarding rules etc. in this VIDEO."
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/watch?v=WcaOmbkxegs&feature=youtu.be",
+        "label": "Rules"
+      },
+      {
+        "type": "paragraph",
+        "text": "For more information on the tournament design, philosophy, and progress, please check out all the videos in the dedicated YouTube playlist."
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/watch?list=PLsdqOYIlGW1CVv6sbWibuhJeTKMohimQ2&v=8AdswgUoR-U",
+        "label": "Tournament Information"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "2021 ELO Champion Trophy",
+    "date": "December 31, 2021",
+    "status": "completed",
+    "description": "N/A",
+    "winners": "N/A",
+    "participants": "N/A",
+    "prize": "N/A",
+    "longDescription": "N/A",
+    "youtubeLink": "N/A",
+    "twitchLink": "N/A"
+  },
+  {
+    "id": 7,
+    "title": "April 2022 3v3 FUT ARENA",
+    "date": "April 2, 2022 – April 24, 2022",
+    "status": "completed",
+    "description": "The 3v3 FUT ARENA is a mini tournament hosted by Hardrada_1066.",
+    "winners": "N/A",
+    "participants": "8",
+    "prize": "$100 USD",
+    "longDescription": "",
+    "youtubeLink": "https://www.youtube.com/playlist?list=PLsdqOYIlGW1ClJOttrKXfOizAxUnwFQQI",
+    "twitchLink": "https://www.twitch.tv/hardrada_1066",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "The 3v3 FUT ARENA is a mini tournament hosted by Hardrada_1066. The applications have closed and these 6 players are going to play in the event:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ironclad, Cheeze, Rabdag/Halu, LUV/Rabbert, Abhimanyu, Ronni"
+      },
+      {
+        "type": "paragraph",
+        "text": "It is going to consist of 6 games being played on the following days:"
+      },
+      {
+        "type": "paragraph",
+        "text": "April 2 2pm EST\nApril 3 2pm EST\nApril 9 2pm EST\nApril 10 2pm EST\nApril 23 2pm EST\nApril 24 2pm EST"
+      },
+      {
+        "type": "paragraph",
+        "text": "The participant who wins the most of these 6 individual games will get $100 USD."
+      },
+      {
+        "type": "paragraph",
+        "text": "This page is going to remain SPOILER FREE until the event concludes. The VODs of all matches will be collected in this playlist."
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/playlist?list=PLsdqOYIlGW1ClJOttrKXfOizAxUnwFQQI",
+        "label": "Playlist"
+      },
+      {
+        "type": "paragraph",
+        "text": "The games are going to be streamed on the Twitch channel again."
+      },
+      {
+        "type": "link",
+        "url": "https://www.twitch.tv/hardrada_1066",
+        "label": "Games"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Brawl 1066",
+    "date": "July 16, 2022 – August 31, 2022",
+    "status": "completed",
+    "description": "3 Captains have chosen players for their teams - now those 3 teams will battle it out in a few Best-of-5 series to dominate the field!",
+    "winners": "Team Anti",
+    "participants": "22 (3 Teams)",
+    "prize": "N/A",
+    "longDescription": "",
+    "youtubeLink": "https://www.youtube.com/playlist?list=PLsdqOYIlGW1BTqFQMmvNVdvB9GUWwL2t-",
+    "twitchLink": "https://www.twitch.tv/hardrada_1066",
+    "bracket": {
+      "rounds": [
+        {
+          "name": "Final",
+          "matches": [
+            {
+              "p1": "Team Anti",
+              "p2": "Team Obi",
+              "winner": "p1",
+              "score": "3-1"
+            }
+          ]
+        }
+      ]
+    },
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "3 Captains have chosen players for their teams - now those 3 teams will battle it out in a few Best-of-5 series to dominate the field!"
+      },
+      {
+        "type": "paragraph",
+        "text": "If you want to catch the games live, it is recommended to follow the Twitch stream."
+      },
+      {
+        "type": "link",
+        "url": "https://www.twitch.tv/hardrada_1066",
+        "label": ""
+      },
+      {
+        "type": "paragraph",
+        "text": "If you prefer watching VODs in order to be able to skip pauses, you will find them in this playlist."
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/playlist?list=PLsdqOYIlGW1BTqFQMmvNVdvB9GUWwL2t-",
+        "label": ""
+      },
+      {
+        "type": "paragraph",
+        "text": "The tournament is a follow-up to the CIV3 HungerGames from late 2021. This time around, there are 3 new CIVs to pick from and it’s a 3v3 tournament instead of the previous 2v2 format. To compensate for that, teams consist of more players, so that not everyone needs to be available at the same time for a 3v3 game."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you want more information on how the teams were formed, which game version we’re playing on, which CIVs are available and how they will be picked, this YouTube video contains it all!"
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/watch?v=3CwDVYmGPrQ",
+        "label": ""
+      },
+      {
+        "type": "paragraph",
+        "text": "The captains are elite MPT players ObiwanKenNooby, Antiquity, Halu. They picked their teams as follows:"
+      },
+      {
+        "type": "image",
+        "src": "https://i.imgur.com/GGGKl8u.png",
+        "alt": "(Rever ended up choosing the players for Team Halu)"
+      },
+      {
+        "type": "paragraph",
+        "text": "The format is pretty straightforward: "
+      },
+      {
+        "type": "paragraph",
+        "text": "1) All teams face each other in a Best-of-5 series.\n2) The best performing team in those matches moves straight to the Final.\n3) The 2 other teams fight for the remaining Final spot in another Best-of-5\n4) The Final is another Best-of-5"
+      },
+      {
+        "type": "paragraph",
+        "text": "For visual learners:"
+      },
+      {
+        "type": "image",
+        "src": "https://i.imgur.com/bHj9xbm.png",
+        "alt": "(all matches are Best-of-5)"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "843 MPT",
+    "date": "July 16, 2022 – August 31, 2022",
+    "status": "completed",
+    "description": "A 2v2v2 MPT tournament hosted by Hardrada_1066, captained by Cheeze, Halu and Antiquity. ",
+    "winners": "N/A",
+    "participants": "20 (3 Teams)",
+    "prize": "N/A",
+    "twitchLink": "https://www.twitch.tv/hardrada_1066",
+    "youtubeLink": "https://www.youtube.com/playlist?list=PLsdqOYIlGW1BU6MY6WU6UBqrYoZLlHcUn",
+    "longDescription": "",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "A 2v2v2 MPT tournament hosted by Hardrada_1066, captained by Cheeze, Halu and Antiquity. Watch here on Twitch for the live games or check this YouTube playlist for the VODs on the day after, as well as some bonus content."
+      },
+      {
+        "type": "link",
+        "url": "https://www.twitch.tv/hardrada_1066",
+        "label": ""
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/playlist?list=PLsdqOYIlGW1BU6MY6WU6UBqrYoZLlHcUn",
+        "label": ""
+      },
+      {
+        "type": "paragraph",
+        "text": "It is quite straightforward, 9 games will be played with all 3 teams sending 2 players into each battle."
+      },
+      {
+        "type": "image",
+        "src": "https://i.imgur.com/YTsZDhI.png",
+        "alt": "The game times."
+      },
+      {
+        "type": "paragraph",
+        "text": "The best performing team across the 9 games will win the event."
+      },
+      {
+        "type": "image",
+        "src": "https://i.imgur.com/Sr6iJn2.png",
+        "alt": "The scoring system."
+      },
+      {
+        "type": "paragraph",
+        "text": "The captains picked their teams in late January:"
+      },
+      {
+        "type": "link",
+        "url": "https://www.youtube.com/watch?v=IraBgY0u-2A&feature=youtu.be",
+        "label": "Teams Build"
+      },
+      {
+        "type": "image",
+        "src": "https://i.imgur.com/18rfKAm.png",
+        "alt": "The teams."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "2023 ELO Champion Trophy",
+    "date": "December 31, 2023 – January 1, 2024",
+    "status": "completed",
+    "description": "Who will be crowned the ELO Champion for 2023?",
+    "winners": "N/A",
+    "participants": "All",
+    "prize": "ELO Champion Trophy",
+    "longDescription": "",
+    "youtubeLink": "N/A",
+    "twitchLink": "N/A",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Who will be crowned the ELO Champion for 2023?"
+      }
+    ]
+  }
+]

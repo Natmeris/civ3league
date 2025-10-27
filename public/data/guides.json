@@ -1,0 +1,136 @@
+[
+  {
+    "id": "qc",
+    "title": "QC (Quick Civ)",
+    "description": "Master the fast-paced Quick Combat mode with these essential guides and video tutorials.",
+    "steamGuides": [
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=793439351",
+        "label": "Beginner QC Guide"
+      },
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=688606769&insideModal=0",
+        "label": "Turn Start Guide to QC"
+      },
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=762488798",
+        "label": "Tips and Goals for the QC Mode"
+      }
+    ],
+    "videos": [
+      {
+        "id": "Mz4wPiuKqbQ",
+        "label": "What Is QC?"
+      },
+      {
+        "id": "RUtZSSc3QnU",
+        "label": "The 1 Chop Build For QC"
+      },
+      {
+        "id": "F0nL3tZ5t94",
+        "label": "Noob Tips For Civ 3's QC"
+      },
+      {
+        "id": "b1nY4Xlnmh0",
+        "label": "QC University: Advanced Strategies And Tactics "
+      },
+      {
+        "id": "jcFHSl4wqdE",
+        "label": "1 Per Turn Growth Strategies for the QC Mode"
+      }
+    ]
+  },
+  {
+    "id": "mpt",
+    "title": "MPT (Multiplayer Tournament)",
+    "description": "Learn competitive strategies and mechanics for MPT-style tournaments.",
+    "steamGuides": [
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1669107567",
+        "label": "A Guide To MPT"
+      }
+    ],
+    "videos": [
+      {
+        "id": "tGKTrdDYtd0",
+        "label": "Reading The Map In The MPT Mod"
+      }
+    ],
+    "tools": [],
+    "images": []
+  },
+  {
+    "id": "future",
+    "title": "Future",
+    "description": "Tired of losing? Learn how to make a name for yourself in one of the most exciting and popular scenarios in the multiplayer civ3 community!",
+    "steamGuides": [
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=773801119",
+        "label": "Beginner Future Guide"
+      },
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=772527038",
+        "label": "Art of Future[1]: How to Become a Killer Player"
+      }
+    ],
+    "videos": [
+      {
+        "id": "Y2zeHi9NEYE",
+        "label": " Civ 3 Future Tactics: The Early TOW Galleon"
+      },
+      {
+        "id": "GF9Kw-qg7kQ",
+        "label": "Civ 3 Future Tactics: Early Kills With Aluminum"
+      }
+    ],
+    "tools": [],
+    "images": []
+  },
+  {
+    "id": "modern",
+    "title": "Modern",
+    "description": "Modern is a new mod for Civ 3 Multiplayer. It's designed so that it dives right into the action, gives players relatively balanced starts, and allows a lot of gameplay options that aren't available in other multiplayer mods.",
+    "steamGuides": [
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2094304665",
+        "label": "Introduction To The \"Modern\" Mod"
+      }
+    ],
+    "videos": [],
+    "tools": [
+      {
+        "url": "https://civplayersciv3league.github.io/",
+        "label": "What can I build in modern with the resources I have?"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://i.imgur.com/CrQS2Sm.png",
+        "alt": "A guide to modern’s tech tree"
+      }
+    ]
+  },
+  {
+    "id": "mdj",
+    "title": "MDJ (Medieval Japan)",
+    "description": "Medieval Japan is a new multiplayer mod. It combines the MPT style of fast, ancient era combat, with new features and quality of life improvements.",
+    "steamGuides": [
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2830860167",
+        "label": "Intro To Medieval Japan"
+      }
+    ],
+    "videos": [],
+    "tools": [],
+    "images": [
+      {
+        "src": "https://i.imgur.com/WNsfx2C.png",
+        "alt": "Civs UU's"
+      },
+      {
+        "src": "https://i.imgur.com/4awVstz.png",
+        "alt": "MDJ Units"
+      }
+    ]
+  }
+]

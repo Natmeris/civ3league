@@ -1,0 +1,288 @@
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Thin_Italic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Light_Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Semibold_Italic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Bold_Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Extrabold_Italic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Adelle Sans';
+  src: url('/fonts/fonnts.com-Adelle_Sans_Heavy_Italic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CivPlayers League Design System - Gaming/Esports Theme */
+
+@layer base {
+  :root {
+    /* Dark gaming theme */
+    --background: 220 13% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Gold accent for gaming theme */
+    --primary: 47 100% 63%;
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 24 100% 53%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 15%;
+    --ring: 47 100% 63%;
+
+    --radius: 0.5rem;
+
+    /* Custom gaming colors */
+    --league-gold: 47 100% 63%;
+    --league-orange: 24 100% 53%;
+    --league-blue: 213 100% 55%;
+    --league-green: 142 76% 36%;
+    --league-red: 0 84% 60%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(220 13% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 13% 10%), hsl(220 13% 12%));
+    --gradient-accent: linear-gradient(90deg, hsl(47 100% 63%), hsl(24 100% 53%));
+    
+    /* Shadows */
+    --shadow-gaming: 0 10px 30px -10px hsl(47 100% 63% / 0.3);
+    --shadow-card: 0 4px 15px -3px hsl(220 13% 5% / 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+      @apply bg-background text-foreground font-sans;
+      color: #fff;
+      font-family: 'Adelle Sans', adelle-sans, sans-serif;
+      font-size: 1.15rem;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Set page edge/background to gold to avoid white gutters on mobile */
+  html {
+    background-color: rgb(20, 5, 37);
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    color: #fff;
+    font-family: 'Adelle Sans', adelle-sans, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  p, span, label, button, a, li, td, th {
+    color: #fff;
+    font-family: 'Adelle Sans', adelle-sans, sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+  
+  /* Gaming Card */
+  .gaming-card {
+    @apply bg-card border border-border rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/50;
+  }
+  
+  /* League Table */
+  .league-table {
+    @apply w-full border-collapse bg-card rounded-lg overflow-hidden shadow-lg;
+  }
+  
+  .league-table th {
+    @apply bg-muted text-left p-4 font-semibold border-b border-border;
+    color: #fff !important;
+    font-family: 'Adelle Sans', adelle-sans, sans-serif !important;
+  }
+  
+  .league-table td {
+    @apply p-4 border-b border-border/50 hover:bg-muted/50 transition-colors;
+  }
+  
+  /* Navigation Links */
+  .nav-link {
+    @apply relative text-foreground hover:text-primary transition-colors duration-300;
+    @apply after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300;
+    @apply hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  /* Gaming Badge */
+  .gaming-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gaming-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-gaming {
+    box-shadow: var(--shadow-gaming);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}

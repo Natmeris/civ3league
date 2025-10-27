@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Civilization 3 Players League</title>
+  <meta name="description" content="The premier Civilization III multiplayer league. Rankings, events, and community." />
+  <meta name="author" content="CivPlayers League" />
+
+  <meta property="og:title" content="Civilization 3 Players League" />
+  <meta property="og:description" content="The premier Civilization III multiplayer league. Rankings, events, and community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/CivPlayers-Civ3-League/civ3-assets/preview.png" />
+  <meta property="og:image:alt" content="Civilization 3 Players League" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Civilization 3 Players League" />
+  <meta name="twitter:description" content="The premier Civilization III multiplayer league. Rankings, events, and community." />
+  <meta name="twitter:image" content="/CivPlayers-Civ3-League/civ3-assets/preview.png" />
+    
+    <!-- Start: Force trailing slash for Vite base URL -->
+    <script type="text/javascript">
+      (function() {
+        var base = '/CivPlayers-Civ3-League/';
+        var l = window.location;
+        if (l.pathname === base.slice(0, -1)) {
+          window.location.replace(base + l.search + l.hash);
+        }
+      })();
+    </script>
+    <!-- End: Force trailing slash for Vite base URL -->
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

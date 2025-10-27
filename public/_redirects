@@ -1,0 +1,2 @@
+# Redirect all requests to index.html for SPA routing
+/CivPlayers-Civ3-League/*   /CivPlayers-Civ3-League/index.html   200

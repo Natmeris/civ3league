@@ -1,0 +1,60 @@
+/* Civ3 Conquests UI Font (Fan recreation, fallback to serif) */
+@font-face {
+  font-family: 'Civ3Small';
+  src: url('/civ3-assets/SmallFonts.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --civ3-bg: url('/civ3-assets/civ3_bg.jpg');
+  --civ3-font: 'Civ3Small', 'Times New Roman', Times, serif;
+  --civ3-gold: #e6c97b;
+  --civ3-blue: #1a2a3a;
+  --civ3-border: #bfa76a;
+}
+
+body {
+  font-family: var(--civ3-font);
+  background: var(--civ3-bg) center/cover no-repeat fixed;
+  color: var(--civ3-gold);
+  text-shadow: 1px 1px 2px #000a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--civ3-font);
+  color: var(--civ3-gold);
+  letter-spacing: 0.04em;
+  text-shadow: 2px 2px 4px #000c;
+}
+
+.card, .gaming-card, .bg-background {
+  background: rgba(26, 42, 58, 0.92) !important;
+  border: 2px solid var(--civ3-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 24px #0008;
+}
+
+button, .btn, .primary {
+  background: linear-gradient(90deg, #bfa76a 0%, #e6c97b 100%);
+  color: #1a2a3a;
+  border: 1.5px solid #bfa76a;
+  border-radius: 6px;
+  font-family: var(--civ3-font);
+  font-weight: bold;
+  text-shadow: none;
+  transition: background 0.2s, color 0.2s;
+}
+button:hover, .btn:hover, .primary:hover {
+  background: #e6c97b;
+  color: #1a2a3a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #1a2a3a;
+}
+::-webkit-scrollbar-thumb {
+  background: #bfa76a;
+  border-radius: 5px;
+}

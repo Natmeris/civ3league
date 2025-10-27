@@ -1,0 +1,10 @@
+{
+  "twitch": [
+    { "name": "Hardrada", "username": "hardrada_1066", "url": "https://www.twitch.tv/hardrada_1066" },
+    { "name": "Rabdag", "username": "rabdag", "url": "https://www.twitch.tv/rabdag" }
+  ],
+  "youtube": [
+    { "name": "Hardrada", "channelId": "UC2AuVRKXclTOjg6s3VMJgqg", "url": "https://www.youtube.com/channel/UC2AuVRKXclTOjg6s3VMJgqg" },
+    { "name": "Suede", "channelId": "UCvJNJ8HF5BWrErL-RpvqbYQ", "url": "https://www.youtube.com/channel/UCvJNJ8HF5BWrErL-RpvqbYQ" }
+  ]
+}
