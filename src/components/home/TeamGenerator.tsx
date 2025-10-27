@@ -123,7 +123,7 @@ export default function TeamGenerator() {
       const n = provided[i];
       const lower = n.toLowerCase();
       positionMap.set(lower, i + 1);
-      const r = lower === "new player" ? 1200 : ratingByName.get(lower);
+  const r = lower === "new player" ? 1500 : ratingByName.get(lower);
       if (r == null) missing.push(n);
       else rated.push({ name: n, rating: r, pos: i + 1 });
     }

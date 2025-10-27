@@ -30,6 +30,16 @@ const Modes = () => {
       ],
     },
     {
+      icon: Flame,
+      title: "UU Madness",
+      description: `A chaotic mode where all UUs in the game are buildable if you control the right luxury or bonus resource.`,
+      details: [
+        "Can be played as teams or CTON (free-for-all with no comms).",
+        "1 City Elimination rule applies.",
+        "Fast, straightforward ancient era and medieval combat",
+      ],
+    },
+    {
       icon: Sword,
       title: "Future",
       description: `Future is a late-era mode played in teams, featuring minimal tech research and heavy strategic flexibility. It uses vanilla Civ’s growth and production systems but introduces many small changes for balance and pacing.`,
@@ -97,16 +107,6 @@ const Modes = () => {
   ];
 
   const lesserModes = [
-    {
-      icon: Flame,
-      title: "UU Madness",
-      description: `A chaotic mode where all UUs in the game are buildable if you control the right luxury or bonus resource.`,
-      details: [
-        "Can be played as teams or CTON (free-for-all with no comms).",
-        "1 City Elimination rule applies.",
-        "Can be scored on the MPT (ancient) ladder.",
-      ],
-    },
     {
       icon: Map,
       title: "Epic",

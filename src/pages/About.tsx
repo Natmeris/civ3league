@@ -50,12 +50,12 @@ const About = () => {
         <Card className="gaming-card mb-12">
           <CardContent className="p-8 text-center">
             <Heart className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-primary mb-6 tracking-tight">Our Mission</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6 tracking-tight">History</h2>
             <p className="text-left text-base md:text-lg text-foreground/90 leading-relaxed max-w-4xl mx-auto tracking-normal">
-              CivPlayers Civ3 League exists to foster a competitive, fair, and welcoming environment 
-              where players of all skill levels can enjoy the timeless strategy of Civilization III. 
-              We believe in the power of strategic thinking, community building, and the endless 
-              possibilities that emerge when great minds come together to compete.
+              Civilization 3 is the first Civilization game to run a competitive, ranked ladder. 
+              It began in the early 2000's, through the Civilization Player's League (CPL). 
+              Since 2000, it has been run independently through the Civ 3 Multiplayer discord and steam group. 
+              This is the best turn based multiplayer strategy game of all time, and we're proud to keep it alive and thriving.
             </p>
           </CardContent>
         </Card>
@@ -80,98 +80,6 @@ const About = () => {
             </Card>
           </div>
         </div>
-
-        {/* What We Do */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-8 text-center">What We Do</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            <Card className="gaming-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Zap className="w-6 h-6 text-primary" />
-                  Competitive Tournaments
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed" style={{ color: '#fff' }}>
-                  We organize regular tournaments ranging from quick blitz events to extended 
-                  championship series. Our signature events like the Hunger Games have become 
-                  legendary in the Civ3 community, featuring innovative formats and exciting prizes.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="gaming-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="w-6 h-6 text-primary" />
-                  Community Building
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed" style={{ color: '#fff' }}>
-                  Beyond competition, we're a thriving community where players share strategies, 
-                  discuss game mechanics, and form lasting friendships. Our Discord server is 
-                  active 24/7 with discussions, tips, and casual games.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="gaming-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Target className="w-6 h-6 text-primary" />
-                  Skill Development
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed" style={{ color: '#fff' }}>
-                  We provide resources, guides, and mentorship opportunities for players looking 
-                  to improve their game. From basic tutorials to advanced strategy discussions, 
-                  we support growth at every level.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="gaming-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Globe className="w-6 h-6 text-primary" />
-                  Global Community
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed" style={{ color: '#fff' }}>
-                  With members from every continent, we celebrate the international nature of 
-                  our community. We accommodate different time zones and cultural backgrounds, 
-                  making everyone feel welcome regardless of where they're from.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* Our Values */}
-        <div className="mb-12">
-          <h2 className="text-4xl font-extrabold text-primary mb-10 text-center tracking-tight">Our Values</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <Card key={index} className="gaming-card">
-                  <CardContent className="p-6 flex flex-col items-center text-center">
-                    <IconComponent className="w-12 h-12 text-primary mb-4 flex-shrink-0" />
-                    <div className="w-full">
-                      <h3 className="text-lg font-semibold text-primary mb-3">{value.title}</h3>
-                      <p className="text-left text-base leading-relaxed" style={{ color: '#fff' }}>{value.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-
         {/* Join Us */}
         <Card className="gaming-card">
           <CardContent className="p-8 text-center">

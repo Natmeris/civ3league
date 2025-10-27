@@ -109,22 +109,6 @@ const SeasonOverview = () => {
             </CardContent>
           </Card>
         </div>
-
-        {/* Season Summary */}
-        <Card className="gaming-card">
-          <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              2024 Season Highlights
-            </h3>
-            <p className="text-white leading-relaxed max-w-3xl mx-auto">
-              The 2024 season showcased incredible competition with over 50 active players participating 
-              in hundreds of matches. Suede claimed the top spot with an impressive 2246 rating, 
-              while Halu demonstrated remarkable dedication with 492 games played and 229 victories. 
-              The season featured multiple tournaments, special events, and countless strategic battles 
-              that pushed players to their limits.
-            </p>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );

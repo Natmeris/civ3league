@@ -34,7 +34,7 @@
     "icon": "AlertTriangle",
     "title": "Quitting & Substitutions",
     "rules": [
-      "Quits will be logged. In the case of a quit, players must either agree to a scrap/concession, play on, or find a substitute (of equal or lower ELO) for the player who quits. The game must still be reported.",
+      "Quits will be logged. In the case of a quit, players must either agree to a scrap/concession, play on, or find a substitute (not more than 100 ELO higher) for the player who quits. The game must still be reported.",
       "The second quit in 4 months results in an automatic 36-hour ban. The third quit is a 72-hour ban. Any additional quits result in a 5-day ban.",
       "These bans are effective as soon as they are announced by a moderator in the mod rulings Steam channel. Games played with a banned player during their ban are non-ladder.",
       "Moderators may also issue quits or bans for other bad behaviour such as teamkilling or excessive flaming."
@@ -56,9 +56,8 @@
     "title": "Scoring & Turn Counter Rules",
     "rules": [
       "If the turn counter expires in a team game, the winner is determined by the sum of all living players’ scores on each team plus the decayed scores of dead players via the histogram.",
-      "In modern mode, if a player dies, that player’s score (or decayed score) is cut in half.",
-      "If a player loses their capital, they have 5 turns to retake or replant it. If not done by the end of the 5th turn, their score (or decayed score) is cut in half.",
-      "Scoring rules for a free-for-all game must be agreed upon before the game begins."
+      "In modern mode, if a player dies, that player’s score (or decayed score) is cut in half. If a player loses their capital, they have 5 turns to retake or replant it. If not done by the end of the 5th turn, their score (or decayed score) is cut in half.",
+      "Different mods have different typical scoring rules for free-for-all games. Ask the host if you're in doubt, or if you want to propose a different system."
     ]
   },
   {
@@ -67,7 +66,7 @@
     "rules": [
       "Players who lag or drop excessively may be forced to be substituted. Hosts, teams, and moderators should work together to make that decision.",
       "During a reload, both teams have 15 minutes to gather their team.",
-      "A substitute of no higher than 150 ELO above the original player may be used.",
+      "A substitute of no higher than 100 ELO above the original player may be used.",
       "If a player subs, the game is still reported. If the subber’s team wins, the game is reported with the subber. If the subber’s team loses, it is reported with the original player.",
       "When reloading, players are strongly encouraged to repeat the same moves as before the reload. If a unit died before the reload but did not after, it must be disbanded."
     ]
@@ -95,8 +94,7 @@
     "rules": [
       "MPTs or QCs where one player spawns alone on an island, or two or more players of the same team spawn on the same island, should be automatically scrapped and are invalid reports.",
       "If two players of opposite teams spawn alone on the same island, that game is valid and should continue normally.",
-      "Coaching is encouraged but must not interfere with fair competition.",
-      "In ladder games, if you will be receiving multiple pieces of advice from a non-teammate who has an ELO of more than 200 above yours, this must be disclosed before teams are made.",
+      "Coaching is encouraged but must not interfere with fair competition. In ladder games, if you will be receiving multiple pieces of advice from a non-teammate who has an ELO of more than 150 above yours, this must be disclosed before teams are made.",
       "This rule set is not meant to be inclusive of all bad behavior. Players who behave poorly in ways not explicitly prohibited may be refused by other players or hosts."
     ]
   }

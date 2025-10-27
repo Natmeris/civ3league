@@ -94,21 +94,25 @@
       {
         "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2094304665",
         "label": "Introduction To The \"Modern\" Mod"
+      },
+      {
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2498881701&searchtext=Search+Sid+Meier%27s+Civilization+III%3A+Complete+Guides",
+        "label": "Intermediate Tips For Modern"
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "id": "op_MJf7k0zg",
+        "label": "Intro to Civ 3's \"Modern\" Multiplayer Mod"
+      }
+    ],
     "tools": [
       {
         "url": "https://civplayersciv3league.github.io/",
         "label": "What can I build in modern with the resources I have?"
       }
     ],
-    "images": [
-      {
-        "src": "https://i.imgur.com/CrQS2Sm.png",
-        "alt": "A guide to modern’s tech tree"
-      }
-    ]
+    "images": []
   },
   {
     "id": "mdj",
