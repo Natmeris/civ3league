@@ -22,10 +22,10 @@ jobs:
         run: npm ci
 
       - name: Build
-        # Ensure the production base is the root (custom domain)
+        # Build using the repo subpath base so the published site works at /civ3league/
         run: |
-          echo "Building with VITE_BASE=/"
-          export VITE_BASE=/ || set "VITE_BASE=/"
+          echo "Building with VITE_BASE=/civ3league/"
+          export VITE_BASE=/civ3league/ || set "VITE_BASE=/civ3league/"
           npm run build
 
       - name: Deploy to GitHub Pages
@@ -71,7 +71,10 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: |
+          echo "Building with VITE_BASE=/civ3league/"
+          export VITE_BASE=/civ3league/
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
