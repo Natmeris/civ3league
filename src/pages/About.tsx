@@ -1,6 +1,6 @@
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Trophy, Users, Globe, Target, Heart, Zap } from "lucide-react";
+import { Trophy, Users, Globe, Target, BookOpen, Zap } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -48,8 +48,8 @@ const About = () => {
 
         {/* Mission Statement */}
         <Card className="gaming-card mb-12">
-          <CardContent className="p-8 text-center">
-            <Heart className="w-12 h-12 text-primary mx-auto mb-4" />
+      <CardContent className="p-8 text-center">
+        <BookOpen className="w-12 h-12 text-primary mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-primary mb-6 tracking-tight">History</h2>
             <p className="text-left text-base md:text-lg text-foreground/90 leading-relaxed max-w-4xl mx-auto tracking-normal">
               Civilization 3 is the first Civilization game to run a competitive, ranked ladder. 
