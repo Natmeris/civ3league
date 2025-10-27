@@ -1,28 +1,76 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>CivPlayers Civ3 League</title>
-    <script type="text/javascript">
-  // Single Page Apps for GitHub Pages
-  // MIT License
-  // https://github.com/rafgraph/spa-github-pages
-  // Keep 0 path segments by default to avoid accidental recursive rewrites
-  // when the site is served from a custom domain or the root. If you deploy
-  // this site under a repository subpath (e.g. /user/repo/), increase this
-  // number to the number of base path segments to preserve.
-  var pathSegmentsToKeep = 0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Civilization 3 Players League</title>
+  <meta name="description" content="The Civilization 3 conquests league. Rankings, events, and community." />
+  <meta name="author" content="CivPlayers League" />
 
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+  <meta property="og:title" content="Civilization 3 Players League" />
+  <meta property="og:description" content="The premier Civilization III multiplayer league. Rankings, events, and community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="civ3-assets/preview.png" />
+  <meta property="og:image:alt" content="Civilization 3 Players League" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Civilization 3 Players League" />
+  <meta name="twitter:description" content="The premier Civilization III multiplayer league. Rankings, events, and community." />
+  <meta name="twitter:image" content="civ3-assets/preview.png" />
+    
+    <!-- Start: Force trailing slash for Vite base URL -->
+    <script type="text/javascript">
+      (function() {
+        // Vite will replace %BASE% at build time. In dev the literal '%BASE%'
+        // may appear; fall back to '/' to avoid malformed requests.
+        var base = '%BASE%';
+        if (typeof base === 'string' && base.indexOf('%BASE%') !== -1) {
+          base = '/';
+        }
+        var l = window.location;
+        try {
+          if (base && l.pathname === base.slice(0, -1)) {
+            window.location.replace(base + l.search + l.hash);
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
     </script>
+    <!-- End: Force trailing slash for Vite base URL -->
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License (adapted)
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        try {
+          // Prevent repeated rewrites which can occur with malicious or
+          // malformed query strings (e.g. repeated ~and~ tokens). Only run
+          // this rewrite once per session.
+          if (sessionStorage.getItem('spa-redirected')) return;
+          if (l.search && l.search[1] === '/') {
+            var decoded = l.search.slice(1).split('&').map(function(s) {
+              return s.replace(/~and~/g, '&');
+            }).join('?');
+            var newUrl = l.pathname.slice(0, -1) + decoded + l.hash;
+            // Only replace if it would change the URL to avoid loops
+            if (newUrl !== (l.pathname + l.search + l.hash)) {
+              window.history.replaceState(null, null, newUrl);
+              sessionStorage.setItem('spa-redirected', '1');
+            }
+          }
+        } catch (e) {
+          // Fail silently — do not block page load on script errors
+        }
+      }(window.location));
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
   </head>
+
   <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
