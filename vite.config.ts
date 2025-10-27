@@ -5,10 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use root base when serving from a custom domain
-  // (previously used the repo-name path). For GitHub Pages with a custom
-  // domain the site is served from the root, so base should be '/'.
-  base: "/",
+  // Allow overriding the base URL at build time via VITE_BASE. This makes it
+  // easy to build either for a repo-subpath (e.g. /CivPlayers-Civ3-League/)
+  // or for a custom domain (root /). Default is '/'.
+  base: process.env.VITE_BASE || "/",
   server: {
     host: "::",
     port: 8080,

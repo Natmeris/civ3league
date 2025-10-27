@@ -22,7 +22,11 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        # Ensure the production base is the root (custom domain)
+        run: |
+          echo "Building with VITE_BASE=/"
+          export VITE_BASE=/ || set "VITE_BASE=/"
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
