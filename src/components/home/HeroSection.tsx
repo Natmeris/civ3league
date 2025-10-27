@@ -4,15 +4,15 @@ import { Trophy, Users, Calendar, Target, ExternalLink } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden">
-      {/* Full-bleed semi-opaque overlay to reproduce the same effect used
-          in lower sections: let the body background image show through and
-          place a color layer on top. */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{ backgroundColor: 'rgba(26,42,58,0.45)' }}
-      />
+    <div
+      className="relative overflow-hidden bg-hero"
+      style={{
+        backgroundImage: `linear-gradient(rgba(26,42,58,0.45), rgba(26,42,58,0.45)), url('/civ3-assets/civ3_bg.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-50 pointer-events-none">
         <svg className="w-full h-full" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">

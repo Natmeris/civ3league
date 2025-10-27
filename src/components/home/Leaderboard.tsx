@@ -347,7 +347,7 @@ const Leaderboard = () => {
                   asChild
                   className="w-full sm:w-auto truncate"
                 >
-                  <a href="/CivPlayers-Civ3-League/old-leaderboards" className="flex items-center justify-center w-full">
+                  <a href="/civ3league/old-leaderboards" className="flex items-center justify-center w-full">
                     <span className="truncate">Old Leaderboards</span>
                     <ExternalLink className="w-3 h-3 ml-1 flex-shrink-0" />
                   </a>
@@ -458,7 +458,7 @@ const Leaderboard = () => {
                                     size="sm"
                                     className="bg-[var(--civ3-gold)] text-[var(--civ3-blue)] border border-[var(--civ3-border)] font-bold shadow-md hover:bg-yellow-300 hover:text-[var(--civ3-blue)] focus:ring-2 focus:ring-[var(--civ3-border)] focus:ring-offset-2 transition-colors"
                                   >
-                                    <a href={`/CivPlayers-Civ3-League/player/${encodeURIComponent(entry.player)}`}>
+                                    <a href={`/civ3league/player/${encodeURIComponent(entry.player)}`}>
                                       View Profile
                                     </a>
                                   </Button>
