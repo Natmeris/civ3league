@@ -7,7 +7,11 @@
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
+  // When serving from a custom domain root (this repo is configured to
+  // use civplayersciv3league.com) we must keep 0 path segments. When
+  // serving from a GitHub Pages repo subpath (username.github.io/repo)
+  // this should be 1. Set to 0 for custom domain.
+  var pathSegmentsToKeep = 0;
 
       var l = window.location;
       l.replace(
