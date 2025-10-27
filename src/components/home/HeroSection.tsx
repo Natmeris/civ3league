@@ -14,13 +14,13 @@ const HeroSection = () => {
       }}
     >
       {/* Colored overlay to ensure consistent tint (above image, below content) */}
-      <div className="absolute inset-0 bg-[rgba(26,42,58,0.90)] z-10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute inset-0 bg-[rgba(20,39,58,0.80)] z-10 pointer-events-none" aria-hidden="true" />
 
       {/* Background Pattern (on top of overlay but still subtle) */}
       <div className="absolute inset-0 opacity-30 pointer-events-none z-20">
         <svg className="w-full h-full" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
-            <g fill="rgb(251 191 36)" fillOpacity="0.05">
+            <g fill="rgb(251 191 36)" fillOpacity="0.10">
               <circle cx="7" cy="7" r="1"/>
             </g>
           </g>
