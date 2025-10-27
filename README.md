@@ -98,9 +98,8 @@ CivPlayers-Civ3-League/
 │   └── data/
 │       ├── events.json       # Tournament/event data
 │       ├── guides.json       # Game mode guides
-│       ├── rules.json        # League rules
+[![Live Site](https://img.shields.io/badge/Live-Site-brightgreen)](https://natmeris.github.io/civ3league/)
 │       └── stream.json       # Streaming info
-├── src/
 │   ├── components/
 │   │   ├── home/
 │   │   │   ├── Leaderboard.tsx        # Multi-mode rankings table
@@ -145,10 +144,9 @@ CivPlayers-Civ3-League/
 - Responsive pagination and sorting
 
 ### Team Generator
-**File**: `src/components/home/TeamGenerator.tsx`
-
+```
+civ3league/
 - **Algorithm**: Brute-force combinations to find optimal split
-- **Captain Logic**: Top 2 by ELO; auto-corrects if wrong positions
 - **Pick Analysis**:
   - If Captain 2 picks A: Team1 = Cap1 + SplitB, Team2 = Cap2 + SplitA
   - If Captain 2 picks B: Team1 = Cap1 + SplitA, Team2 = Cap2 + SplitB
@@ -158,9 +156,8 @@ CivPlayers-Civ3-League/
 ### Player Profile
 **File**: `src/pages/PlayerProfile.tsx`
 
-- Aggregates stats across all modes
+# Open http://localhost:5173/civ3league/
 - Bar charts for rating comparison
-- Excludes "Overall" from per-mode displays
 - Quick summary with placement info
 
 ### Admin Panel
@@ -172,9 +169,8 @@ CivPlayers-Civ3-League/
 - **Bracket Generator**: Creates tournament structures
 - **Download**: Exports updated JSON for deployment
 
----
+  base: '/civ3league/', // Change to your repo name
 
-## 🎮 How It Works
 
 ### Leaderboard Data Flow
 1. Google Sheets → Publish to Web as CSV
@@ -195,11 +191,10 @@ CivPlayers-Civ3-League/
    - Calculate Team1 ELO if Cap2 picks A (Cap1 + B)
    - Calculate Team2 ELO if Cap2 picks A (Cap2 + A)
    - Calculate Team1 ELO if Cap2 picks B (Cap1 + A)
-   - Calculate Team2 ELO if Cap2 picks B (Cap2 + B)
-6. Choose the split where min(deltaA, deltaB) is smallest
-7. Display both scenarios with probabilities
+1. Push changes to `main` branch
+2. GitHub Actions builds and deploys to `gh-pages`
+3. Live at: `https://natmeris.github.io/civ3league/`
 
-### Event Content Rendering
 - Events can have `orderedContent` array or legacy `longDescription`
 - Ordered blocks render in sequence:
   - **paragraph**: Styled text with line breaks
@@ -209,8 +204,8 @@ CivPlayers-Civ3-League/
 - URLs resolve relative to GitHub Pages base path
 
 ---
-
-## � Video Tutorials
+git clone https://github.com/Natmeris/civ3league.git
+cd civ3league
 
 **Complete walkthrough videos** covering admin panel usage, web updates, and basic code modifications:
 

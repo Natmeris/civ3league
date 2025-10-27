@@ -69,7 +69,7 @@ const OldLeaderboards = () => {
 
     Object.entries(leaderboardData).forEach(([key, data]) => {
       Array.from({ length: data.pages }, (_, i) => i + 1).forEach((pageNum) => {
-  const src = `/civ3league/civ3-assets/OldLeaderboard/${key}Leaderboard/Page_${pageNum}.webp`;
+  const src = `${import.meta.env.BASE_URL}civ3-assets/OldLeaderboard/${key}Leaderboard/Page_${pageNum}.webp`;
         loadImage(src);
       });
     });
@@ -139,7 +139,7 @@ const OldLeaderboards = () => {
                     >
                       {Array.from({ length: data.pages }, (_, i) => {
                         const pageNum = i + 1;
-                        const src = `/civ3league/civ3-assets/OldLeaderboard/${key}Leaderboard/Page_${pageNum}.webp`;
+                        const src = `${import.meta.env.BASE_URL}civ3-assets/OldLeaderboard/${key}Leaderboard/Page_${pageNum}.webp`;
                         const isVisible =
                           pageNum === currentPages[key as keyof typeof currentPages];
                         return (

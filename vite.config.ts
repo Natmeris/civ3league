@@ -5,7 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/civ3league/",
+  // Allow overriding the base URL at build time via VITE_BASE (e.g. /civ3league/)
+  base: process.env.VITE_BASE || "/",
   server: {
     host: "::",
     port: 8080,

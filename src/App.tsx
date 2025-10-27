@@ -4,7 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-const BASE_NAME = "/civ3league";
+// Use Vite's runtime base URL so the app works both on root domains and repo subpaths.
+const BASE_NAME = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
