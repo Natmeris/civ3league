@@ -19,6 +19,7 @@ import Stream from "./pages/Stream";
 import Admin from "./pages/Admin";
 import OldLeaderboards from "./pages/OldLeaderboards";
 import PlayerProfile from "./pages/PlayerProfile";
+import ComparePage from "./pages/ComparePage";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/admin" element={<Admin />} />
           <Route path="/old-leaderboards" element={<OldLeaderboards />} />
           <Route path="/player/:name" element={<PlayerProfile />} />
+          <Route path="/compare" element={<ComparePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<Index />} />
         </Routes>

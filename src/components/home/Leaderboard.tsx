@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Trophy, Medal, Search, ArrowUpDown, ExternalLink, Loader2 } from "lucide-react";
+import ComparePlayers from "@/components/ComparePlayers";
 import { cn } from "@/lib/utils";
 
 interface LeaderboardEntry {
@@ -539,6 +540,10 @@ const Leaderboard = () => {
           </Tabs>
           </CardContent>
         </Card>
+        {/* Small compare widget under leaderboard */}
+        <div className="mt-6">
+          <ComparePlayers compact />
+        </div>
       </div>
     </section>
   );

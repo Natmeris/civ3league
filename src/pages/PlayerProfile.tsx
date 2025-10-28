@@ -5,8 +5,31 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ArrowLeft, Trophy } from "lucide-react";
+import { ArrowLeft, Trophy, ChevronDown } from "lucide-react";
 import { fetchModeData, GameMode } from "@/lib/leaderboardData";
+import ComparePlayers from "@/components/ComparePlayers";
+
+const CompareSection = ({ initial }: { initial?: string[] }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div>
+      <div className="flex items-center justify-start gap-4">
+        <Button size="lg" className="btn-hero" onClick={() => setOpen(o => !o)}>
+          Compare To
+          <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${open ? 'rotate-180' : ''}`} />
+        </Button>
+        <Button asChild variant="outline" size="lg">
+          <a href={`/compare?players=${(initial||[]).map(encodeURIComponent).join(',')}`}>Open full comparison</a>
+        </Button>
+      </div>
+      {open && (
+        <div className="mt-4">
+          <ComparePlayers initial={initial} />
+        </div>
+      )}
+    </div>
+  );
+};
 
 
 type PlayerModeStats = {
@@ -186,7 +209,6 @@ const PlayerProfile = () => {
                     </div>
                     <div className="p-3 border border-border rounded">
                       <div className="text-sm text-muted-foreground">Best Mode Rank</div>
-                      <div className="text-lg font-bold">#{sorted[0].rank}</div>
                     </div>
                     <div className="p-3 border border-border rounded">
                       <div className="text-sm text-muted-foreground">Highest Win Rate</div>
@@ -276,6 +298,11 @@ const PlayerProfile = () => {
             </CardContent>
           </Card>
         )}
+
+        {/* Compare players (toggleable) */}
+        <div className="mt-6">
+          <CompareSection initial={[playerName]} />
+        </div>
 
       </main>
       <Footer />
