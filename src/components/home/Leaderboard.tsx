@@ -17,6 +17,7 @@ interface LeaderboardEntry {
   losses: number;
   winRate: number;
   cton: number;
+  active?: boolean;
 }
 
 type GameMode = "Overall" | "MPT" | "Modern" | "FUT" | "QC" | "MDJ" | "UU" | "CW";
@@ -138,7 +139,8 @@ const Leaderboard = () => {
     const idxWins = findIndex('wins', 'w', 'won');
     const idxLosses = findIndex('losses', 'l', 'lost', 'loss');
     const idxWR = findIndex('winrate', 'win%', 'wr', 'winpct', 'winpercentage');
-    const idxCTON = findIndex('cton', 'catchtheoldnewbie', 'catch');
+  const idxCTON = findIndex('cton', 'catchtheoldnewbie', 'catch');
+  const idxActive = findIndex('active', 'status', 'lastseen', 'inactive', 'online');
 
     const toInt = (v: string | undefined, def = 0) => {
       if (!v) return def;
@@ -178,10 +180,18 @@ const Leaderboard = () => {
       }
       
       const cton = idxCTON >= 0 ? toInt(row[idxCTON], 0) : 0;
-      
+      // Determine active: if the rank cell is explicitly set (non-empty), consider active.
+      const rankRaw = idxRank >= 0 ? (row[idxRank] || '').toString().trim() : '';
+      let active = rankRaw.length > 0;
+      // Fallback: if no explicit rank, check an active/status column if present
+      if (!active && idxActive >= 0 && row[idxActive]) {
+        const v = row[idxActive].toLowerCase().trim();
+        active = ['active', 'yes', 'y', 'true', '1', 'online'].includes(v);
+      }
+
       const rank = idxRank >= 0 ? toInt(row[idxRank], results.length + 1) : results.length + 1;
 
-      results.push({ rank, player, rating, gamesPlayed, wins, losses, winRate, cton });
+      results.push({ rank, player, rating, gamesPlayed, wins, losses, winRate, cton, active });
     }
 
     return results;
@@ -412,6 +422,14 @@ const Leaderboard = () => {
                               <SortableHeader field="losses">Losses</SortableHeader>
                               <SortableHeader field="winRate">Win Rate</SortableHeader>
                               <SortableHeader field="cton">CTON</SortableHeader>
+                              <TableHead className="flex items-center gap-2">
+                                <div className="flex items-center gap-2">
+                                  <span className="inline-block w-3 h-3 rounded-full bg-green-500" />
+                                  <span className="text-xs text-muted-foreground">Active</span>
+                                  <span className="inline-block w-3 h-3 rounded-full bg-red-500 ml-3" />
+                                  <span className="text-xs text-muted-foreground">Inactive</span>
+                                </div>
+                              </TableHead>
                               <TableHead>Profile</TableHead>
                             </TableRow>
                           </TableHeader>
@@ -451,6 +469,13 @@ const Leaderboard = () => {
                                 </TableCell>
                                 <TableCell className="text-muted-foreground">
                                   {entry.cton}
+                                </TableCell>
+                                <TableCell>
+                                  <span
+                                    title={entry.active ? 'Active' : 'Inactive'}
+                                    aria-label={entry.active ? 'Active' : 'Inactive'}
+                                    className={`inline-block w-3 h-3 rounded-full ${entry.active ? 'bg-green-500' : 'bg-red-500'}`}
+                                  />
                                 </TableCell>
                                 <TableCell>
                                   <Button
