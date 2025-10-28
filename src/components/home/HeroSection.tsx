@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Users, Calendar, Target, ExternalLink } from "lucide-react";
+import UpcomingEvents from "@/components/home/UpcomingEvents";
 
 const HeroSection = () => {
   return (
@@ -110,6 +111,7 @@ const HeroSection = () => {
             </Card>
           </div>
         </div>
+        <UpcomingEvents />
       </div>
     </div>
   );

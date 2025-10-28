@@ -45,9 +45,26 @@ const Events = () => {
         );
         if (!res.ok) throw new Error('Failed to fetch events');
         const json = await res.json();
-        const sorted = Array.isArray(json)
-          ? json.slice().sort((a: EventItem, b: EventItem) => parseEventEndDate(b.date) - parseEventEndDate(a.date))
-          : [];
+        let sorted: EventItem[] = [];
+        if (Array.isArray(json)) {
+          const arr: EventItem[] = json.slice();
+          const parseStartDate = (dateStr: string): number => {
+            if (!dateStr) return 0;
+            const parts = dateStr.split(/\s*[–—-]\s*/).map((p) => p.trim()).filter(Boolean);
+            const startPart = parts.length > 0 ? parts[0] : dateStr;
+            const t = Date.parse(startPart);
+            return isNaN(t) ? 0 : t;
+          };
+
+          const ongoing = arr.filter((e) => e.status === "ongoing").sort((a, b) => parseStartDate(a.date) - parseStartDate(b.date));
+          const upcoming = arr.filter((e) => e.status === "upcoming").sort((a, b) => parseStartDate(a.date) - parseStartDate(b.date));
+          const completed = arr.filter((e) => e.status === "completed").sort((a, b) => parseEventEndDate(b.date) - parseEventEndDate(a.date));
+          const others = arr.filter((e) => !["ongoing", "upcoming", "completed"].includes(e.status)).sort((a, b) => parseStartDate(a.date) - parseStartDate(b.date));
+
+          sorted = [...ongoing, ...upcoming, ...completed, ...others];
+        } else {
+          sorted = [];
+        }
         if (!cancelled) setEvents(sorted);
       } catch (err) {
         console.error('Error loading events.json', err);
