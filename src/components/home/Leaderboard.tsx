@@ -216,14 +216,26 @@ const Leaderboard = () => {
       const csvText = await response.text();
       console.log(`${mode} CSV preview:`, csvText.slice(0, 300));
       
-      const data = parseCSV(csvText);
+  const data = parseCSV(csvText);
       console.log(`${mode} parsed ${data.length} entries`);
       
       if (data.length === 0) {
         throw new Error('No data found in sheet');
       }
-      
-      setLeaderboardData(prev => ({ ...prev, [mode]: data }));
+
+      // Re-rank entries based on rating (ELO) for consistency across modes
+      const ranked = data.slice().sort((a, b) => {
+        // Primary: rating descending (higher ELO => better rank)
+        if (b.rating !== a.rating) return b.rating - a.rating;
+        // Secondary: more wins
+        if (b.wins !== a.wins) return b.wins - a.wins;
+        // Tertiary: more games played
+        if (b.gamesPlayed !== a.gamesPlayed) return b.gamesPlayed - a.gamesPlayed;
+        // Fallback: alphabetical
+        return a.player.localeCompare(b.player);
+      }).map((entry, idx) => ({ ...entry, rank: idx + 1 }));
+
+      setLeaderboardData(prev => ({ ...prev, [mode]: ranked }));
     } catch (err) {
       console.error(`Error loading ${mode} leaderboard:`, err);
       setError(prev => ({ 
@@ -422,14 +434,7 @@ const Leaderboard = () => {
                               <SortableHeader field="losses">Losses</SortableHeader>
                               <SortableHeader field="winRate">Win Rate</SortableHeader>
                               <SortableHeader field="cton">CTON</SortableHeader>
-                              <TableHead className="flex items-center gap-2">
-                                <div className="flex items-center gap-2">
-                                  <span className="inline-block w-3 h-3 rounded-full bg-green-500" />
-                                  <span className="text-xs text-muted-foreground">Active</span>
-                                  <span className="inline-block w-3 h-3 rounded-full bg-red-500 ml-3" />
-                                  <span className="text-xs text-muted-foreground">Inactive</span>
-                                </div>
-                              </TableHead>
+                              <TableHead>Status</TableHead>
                               <TableHead>Profile</TableHead>
                             </TableRow>
                           </TableHeader>
@@ -471,11 +476,14 @@ const Leaderboard = () => {
                                   {entry.cton}
                                 </TableCell>
                                 <TableCell>
-                                  <span
-                                    title={entry.active ? 'Active' : 'Inactive'}
-                                    aria-label={entry.active ? 'Active' : 'Inactive'}
-                                    className={`inline-block w-3 h-3 rounded-full ${entry.active ? 'bg-green-500' : 'bg-red-500'}`}
-                                  />
+                                  <div className="flex items-center gap-2">
+                                    <span
+                                      title={entry.active ? 'Active' : 'Inactive'}
+                                      aria-label={entry.active ? 'Active' : 'Inactive'}
+                                      className={`inline-block w-3 h-3 rounded-full ${entry.active ? 'bg-green-500' : 'bg-red-500'}`}
+                                    />
+                                    <span className="text-sm text-white">{entry.active ? 'Active' : 'Inactive'}</span>
+                                  </div>
                                 </TableCell>
                                 <TableCell>
                                   <Button
