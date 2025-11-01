@@ -45,9 +45,22 @@ button, .btn, .primary {
   text-shadow: none;
   transition: background 0.2s, color 0.2s;
 }
+
 button:hover, .btn:hover, .primary:hover {
   background: #e6c97b;
   color: #1a2a3a;
+}
+
+button[role="switch"] {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+button[role="switch"][data-state="checked"] {
+  background-color: #10b981 !important;
+}
+button[role="switch"][data-state="unchecked"] {
+  background-color: #000000 !important;
 }
 
 ::-webkit-scrollbar {

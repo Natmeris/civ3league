@@ -263,6 +263,8 @@
   .gaming-badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30;
   }
+
+  
 }
 
 @layer utilities {

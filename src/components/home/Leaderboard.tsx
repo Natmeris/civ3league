@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Trophy, Medal, Search, ArrowUpDown, ExternalLink, Loader2 } from "lucide-react";
@@ -273,11 +274,18 @@ const Leaderboard = () => {
   });
   const ENTRIES_PER_PAGE = 10;
 
+  const [showInactive, setShowInactive] = useState(false);
+
   const filteredAndSortedData = useMemo(() => {
     const currentData = leaderboardData[activeMode];
     let filtered = currentData.filter(entry =>
       entry.player.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    // If the toggle is off, hide players explicitly marked as inactive
+    if (!showInactive) {
+      filtered = filtered.filter(entry => entry.active !== false);
+    }
 
     filtered.sort((a, b) => {
       const aVal = a[sortField];
@@ -289,7 +297,7 @@ const Leaderboard = () => {
       }
     });
     return filtered;
-  }, [searchTerm, sortField, sortDirection, leaderboardData, activeMode]);
+  }, [searchTerm, sortField, sortDirection, leaderboardData, activeMode, showInactive]);
 
   // Paginated data for current page
   const paginatedData = useMemo(() => {
@@ -375,6 +383,17 @@ const Leaderboard = () => {
                     <ExternalLink className="w-3 h-3 ml-1 flex-shrink-0" />
                   </a>
                 </Button>
+                <div className="flex items-center gap-2">
+                  <Switch
+                    checked={showInactive}
+                    onCheckedChange={setShowInactive}
+                    // Inline style to force persistent track background: green when ON, black when OFF
+                    style={{ backgroundColor: showInactive ? '#10b981' : '#000000' }}
+                  />
+                  <label className="text-sm font-medium text-foreground cursor-pointer" onClick={() => setShowInactive(!showInactive)}>
+                    Show Inactive: {showInactive ? "ON" : "OFF"}
+                  </label>
+                </div>
               </div>
             </div>
           </CardHeader>
