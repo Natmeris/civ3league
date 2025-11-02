@@ -296,7 +296,10 @@ const Leaderboard = () => {
         return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
       }
     });
-    return filtered;
+
+    // Re-rank after filtering so ranks are contiguous when inactive players are hidden
+    const reRanked = filtered.map((entry, idx) => ({ ...entry, rank: idx + 1 }));
+    return reRanked;
   }, [searchTerm, sortField, sortDirection, leaderboardData, activeMode, showInactive]);
 
   // Paginated data for current page
