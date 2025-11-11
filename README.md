@@ -1,6 +1,6 @@
 # 🏛️ Civilization 3 Players League
 
-[![Live Site](https://img.shields.io/badge/Live-Site-brightgreen)](https://vladpocris.github.io/CivPlayers-Civ3-League/)
+[![Live Site](https://img.shields.io/badge/Live-Site-brightgreen)](https://civplayersciv3league.com/)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5-purple.svg)](https://vitejs.dev/)
