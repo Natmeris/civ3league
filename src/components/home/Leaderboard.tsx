@@ -22,7 +22,7 @@ interface LeaderboardEntry {
   active?: boolean;
 }
 
-type GameMode = "Overall" | "MPT" | "Modern" | "FUT" | "QC" | "MDJ" | "UU" | "CW";
+type GameMode = "Overall" | "MPT" | "Modern" | "FUT" | "MediMPT" | "QC" | "MDJ" | "UU" | "CW";
 
 // Google Sheets published document ID and sheet GIDs for each mode
 const PUBLISHED_DOC_ID = "2PACX-1vQFHhHo2i43HoPGGonyLAiCzV7q-P_RB27oMS1eD0qWi72XGE5EqV33XpkS7Zi01F3dyCkO2I-TP9OE";
@@ -32,6 +32,7 @@ const SHEET_GIDS: Record<GameMode, string> = {
   Modern: "715002767",
   FUT: "1605870438",
   QC: "1291609339",
+  MediMPT: "63328413",
   MDJ: "1937906358",
   UU: "1738898411",
   CW: "1855555132",
@@ -49,6 +50,7 @@ const Leaderboard = () => {
     Modern: [],
     FUT: [],
     QC: [],
+    MediMPT: [],
     MDJ: [],
     UU: [],
     CW: [],
@@ -60,6 +62,7 @@ const Leaderboard = () => {
     Modern: false,
     FUT: false,
     QC: false,
+    MediMPT: false,
     MDJ: false,
     UU: false,
     CW: false,
@@ -71,6 +74,7 @@ const Leaderboard = () => {
     Modern: null,
     FUT: null,
     QC: null,
+    MediMPT: null,
     MDJ: null,
     UU: null,
     CW: null,
@@ -268,6 +272,7 @@ const Leaderboard = () => {
     Modern: 1,
     FUT: 1,
     QC: 1,
+    MediMPT: 1,
     MDJ: 1,
     UU: 1,
     CW: 1,
@@ -403,8 +408,8 @@ const Leaderboard = () => {
           
           <CardContent>
             <Tabs value={activeMode} onValueChange={(value) => setActiveMode(value as GameMode)} className="w-full">
-              <TabsList className="grid w-full grid-cols-4 lg:grid-cols-8 mb-14 lg:mb-2 gap-2">
-                {(["Overall", "MPT", "Modern", "FUT", "QC", "MDJ", "UU", "CW"] as GameMode[]).map((mode) => (
+              <TabsList className="grid w-full grid-cols-5 lg:grid-cols-8 mb-14 lg:mb-2 gap-2">
+                {(["Overall", "MPT", "Modern", "FUT", "QC", "MediMPT", "MDJ", "UU", "CW"] as GameMode[]).map((mode) => (
                   <TabsTrigger
                     key={mode}
                     value={mode}
@@ -418,7 +423,7 @@ const Leaderboard = () => {
                 ))}
               </TabsList>
 
-              {(["Overall", "MPT", "Modern", "FUT", "QC", "MDJ", "UU", "CW"] as GameMode[]).map((mode) => (
+              {(["Overall", "MPT", "Modern", "FUT", "QC", "MediMPT", "MDJ", "UU", "CW"] as GameMode[]).map((mode) => (
                 <TabsContent key={mode} value={mode} className="mt-0">
                   {loading[mode] ? (
                     <div className="flex items-center justify-center py-12">

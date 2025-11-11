@@ -9,7 +9,7 @@ export interface LeaderboardEntry {
   cton: number;
 }
 
-export type GameMode = "Overall" | "MPT" | "Modern" | "FUT" | "QC" | "MDJ" | "UU" | "CW";
+export type GameMode = "Overall" | "MPT" | "Modern" | "FUT" | "QC" | "MediMPT"| "MDJ" | "UU" | "CW";
 
 export const PUBLISHED_DOC_ID = "2PACX-1vQFHhHo2i43HoPGGonyLAiCzV7q-P_RB27oMS1eD0qWi72XGE5EqV33XpkS7Zi01F3dyCkO2I-TP9OE";
 export const SHEET_GIDS: Record<GameMode, string> = {
@@ -18,6 +18,7 @@ export const SHEET_GIDS: Record<GameMode, string> = {
   Modern: "715002767",
   FUT: "1605870438",
   QC: "1291609339",
+  MediMPT: "63328413",
   MDJ: "1937906358",
   UU: "1738898411",
   CW: "1855555132",
