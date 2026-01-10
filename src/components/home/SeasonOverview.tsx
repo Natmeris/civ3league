@@ -1,6 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Medal, Target, TrendingUp } from "lucide-react";
+import { useEffect, useState } from "react";
+
+interface StatCategory {
+  title: string;
+  leaders: Array<{
+    rank: number;
+    player: string;
+    value: string;
+  }>;
+}
 
 const SeasonOverview = () => {
   const finalWinners = [
@@ -11,46 +21,65 @@ const SeasonOverview = () => {
     { rank: 5, player: "Halu", rating: 1814, icon: Target, color: "text-green-500" },
   ];
 
-  const stats = [
+  const [stats, setStats] = useState<StatCategory[]>([
     {
       title: "Most Games Played",
       leaders: [
-        { player: "Halu", value: "492 games" },
-        { player: "Silent Knight", value: "382 games" },
-        { player: "zaxxon", value: "374 games" },
+        { rank: 1, player: "Halu", value: "492" },
+        { rank: 2, player: "Silent Knight", value: "382" },
+        { rank: 3, player: "zaxxon", value: "374" },
       ]
     },
     {
       title: "Most Wins",
       leaders: [
-        { player: "Halu", value: "229 wins" },
-        { player: "Silent Knight", value: "222 wins" },
-        { player: "Zardoz", value: "190 wins" },
+        { rank: 1, player: "Halu", value: "229" },
+        { rank: 2, player: "Silent Knight", value: "222" },
+        { rank: 3, player: "Zardoz", value: "190" },
       ]
     },
     {
       title: "Highest Win Rate",
       leaders: [
-        { player: "rabdag", value: "71.2%" },
-        { player: "Suede", value: "64.0%" },
-        { player: "Carlot", value: "61.5%" },
+        { rank: 1, player: "rabdag", value: "71.2%" },
+        { rank: 2, player: "Suede", value: "64.0%" },
+        { rank: 3, player: "Carlot", value: "61.5%" },
       ]
     }
-  ];
+  ]);
+
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const res = await fetch(
+          `${import.meta.env.BASE_URL}data/leaderboard-stats.json?v=${Date.now()}`,
+          { cache: "no-store" }
+        );
+        if (!res.ok) throw new Error('Failed to fetch leaderboard stats');
+        const json = await res.json();
+        if (!cancelled) setStats(Array.isArray(json) ? json : []);
+      } catch (err) {
+        console.error('Error loading leaderboard-stats.json', err);
+      }
+    };
+    load();
+    return () => { cancelled = true; };
+  }, []);
 
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">
-            2024 Season Overview
+            2025 Season Overview
           </h2>
           <p className="text-xl text-white max-w-2xl mx-auto">
             Celebrating our top competitors and their achievements throughout the season
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="space-y-8 mb-12">
           {/* Final Rating Winners */}
           <Card className="gaming-card">
             <CardHeader>
@@ -60,18 +89,16 @@ const SeasonOverview = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
                 {finalWinners.map((winner) => {
                   const IconComponent = winner.icon;
                   return (
-                    <div key={winner.rank} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center gap-2">
-                          <IconComponent className={`w-5 h-5 ${winner.color}`} />
-                          <span className="font-semibold text-lg">#{winner.rank}</span>
-                        </div>
-                        <span className="font-medium text-foreground">{winner.player}</span>
+                    <div key={winner.rank} className="flex flex-col items-center justify-center p-3 rounded-lg bg-muted/50 text-center">
+                      <div className="flex items-center gap-2 mb-2">
+                        <IconComponent className={`w-5 h-5 ${winner.color}`} />
+                        <span className="font-semibold text-lg">#{winner.rank}</span>
                       </div>
+                      <span className="font-medium text-foreground mb-2">{winner.player}</span>
                       <Badge variant="secondary" className="gaming-badge">
                         {winner.rating} pts
                       </Badge>
@@ -82,32 +109,42 @@ const SeasonOverview = () => {
             </CardContent>
           </Card>
 
-          {/* Season Statistics */}
-          <Card className="gaming-card">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="w-6 h-6 text-primary" />
-                Season Statistics
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                {stats.map((stat, index) => (
-                  <div key={index}>
-                    <h4 className="font-semibold text-primary mb-3">{stat.title}</h4>
-                    <div className="space-y-2">
-                      {stat.leaders.map((leader, leaderIndex) => (
-                        <div key={leaderIndex} className="flex justify-between items-center">
-                          <span className="text-foreground">{leader.player}</span>
-                          <span className="text-muted-foreground font-medium">{leader.value}</span>
+          {/* Season Statistics - Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <Card key={index} className="gaming-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-primary" />
+                    {stat.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {stat.leaders.map((leader, leaderIndex) => {
+                      // Format value with appropriate suffix based on stat type
+                      let formattedValue = leader.value;
+                      if (stat.title === "Most Games") {
+                        formattedValue = `${leader.value} games`;
+                      } else if (stat.title === "Most Wins") {
+                        formattedValue = `${leader.value} wins`;
+                      }
+                      
+                      return (
+                        <div key={leaderIndex} className="flex justify-between items-center p-2 rounded bg-muted/30">
+                          <div className="flex items-center gap-2">
+                            <Badge variant="outline" className="text-xs">{leader.rank}</Badge>
+                            <span className="text-foreground font-medium">{leader.player}</span>
+                          </div>
+                          <span className="text-muted-foreground font-semibold">{formattedValue}</span>
                         </div>
-                      ))}
-                    </div>
+                      );
+                    })}
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

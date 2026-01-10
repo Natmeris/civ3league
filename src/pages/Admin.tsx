@@ -15,10 +15,12 @@ import {
   Calendar,
   BookOpen,
   Radio,
-  AlertCircle
+  AlertCircle,
+  TrendingUp,
+  AlertTriangle
 } from "lucide-react";
 
-const DATA_KEYS = ["rules", "events", "guides", "stream"] as const;
+const DATA_KEYS = ["rules", "events", "guides", "stream", "leaderboard-stats", "banned-tactics"] as const;
 type DataKey = (typeof DATA_KEYS)[number];
 
 type RuleCategory = { icon: string; title: string; rules: string[] };
@@ -61,6 +63,26 @@ type StreamData = {
   twitch: { name: string; username: string; url: string }[];
   youtube: { name: string; channelId: string; url: string }[];
 };
+type LeaderboardStatCategory = {
+  title: string;
+  leaders: Array<{
+    rank: number;
+    player: string;
+    value: string;
+  }>;
+};
+type BannedTactic = {
+  title: string;
+  description: string;
+  exceptions?: string[];
+  enforcementNotes?: string;
+};
+type BannedTacticsData = {
+  title: string;
+  introduction: string;
+  tactics: BannedTactic[];
+  additionalNote: string;
+};
 
 const Admin = () => {
   useDocumentTitle("Admin - Civ 3 League");
@@ -70,6 +92,8 @@ const Admin = () => {
   const [eventsStructured, setEventsStructured] = useState<EventItem[] | null>(null);
   const [guidesStructured, setGuidesStructured] = useState<GuideItem[] | null>(null);
   const [streamStructured, setStreamStructured] = useState<StreamData | null>(null);
+  const [leaderboardStatsStructured, setLeaderboardStatsStructured] = useState<LeaderboardStatCategory[] | null>(null);
+  const [bannedTacticsStructured, setBannedTacticsStructured] = useState<BannedTacticsData | null>(null);
   const [bracketGenPlayers, setBracketGenPlayers] = useState<Record<number, number>>({});
 
   const load = async (key: DataKey) => {
@@ -86,6 +110,8 @@ const Admin = () => {
       if (key === "events") setEventsStructured(Array.isArray(json) ? json : []);
       if (key === "guides") setGuidesStructured(Array.isArray(json) ? json : []);
       if (key === "stream") setStreamStructured(json as StreamData);
+      if (key === "leaderboard-stats") setLeaderboardStatsStructured(Array.isArray(json) ? json : []);
+      if (key === "banned-tactics") setBannedTacticsStructured(json as BannedTacticsData);
       setStatus("✓ Loaded successfully");
     } catch (err: unknown) {
       console.error(err);
@@ -108,6 +134,10 @@ const Admin = () => {
         return (guidesStructured ?? []) as unknown;
       case "stream":
         return (streamStructured ?? { twitch: [], youtube: [] }) as unknown;
+      case "leaderboard-stats":
+        return (leaderboardStatsStructured ?? []) as unknown;
+      case "banned-tactics":
+        return (bannedTacticsStructured ?? {}) as unknown;
       default:
         return {} as unknown;
     }
@@ -134,6 +164,8 @@ const Admin = () => {
       case "events": return Calendar;
       case "guides": return BookOpen;
       case "stream": return Radio;
+      case "leaderboard-stats": return TrendingUp;
+      case "banned-tactics": return AlertTriangle;
     }
   };
 
@@ -1450,6 +1482,301 @@ const Admin = () => {
                   ))}
                 </CardContent>
               </Card>
+            </div>
+          )}
+
+          {active === "leaderboard-stats" && (
+            <div className="space-y-4 md:space-y-6">
+              {(leaderboardStatsStructured || []).map((cat, ci) => (
+                <Card key={ci} className="gaming-card">
+                  <CardHeader className="p-4 md:p-6">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 md:gap-3">
+                      <input
+                        className="flex-1 p-2 border border-border rounded bg-background text-foreground font-semibold text-base md:text-lg"
+                        placeholder="Category Title"
+                        value={cat.title}
+                        onChange={(e) => {
+                          const copy = (leaderboardStatsStructured || []).slice();
+                          copy[ci] = { ...copy[ci], title: e.target.value };
+                          setLeaderboardStatsStructured(copy);
+                        }}
+                      />
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => {
+                          const copy = (leaderboardStatsStructured || []).slice();
+                          copy.splice(ci, 1);
+                          setLeaderboardStatsStructured(copy);
+                        }}
+                        className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto text-xs md:text-sm"
+                      >
+                        <Trash2 className="w-3 h-3 md:w-4 md:h-4 mr-1" />
+                        Remove
+                      </Button>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-4 md:p-6 space-y-3">
+                    {(cat.leaders || []).map((leader, li) => (
+                      <div key={li} className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                        <input
+                          className="p-2 border border-border rounded bg-background text-foreground text-sm"
+                          placeholder="Rank"
+                          type="number"
+                          value={leader.rank}
+                          onChange={(e) => {
+                            const copy = (leaderboardStatsStructured || []).slice();
+                            copy[ci].leaders[li] = { ...copy[ci].leaders[li], rank: parseInt(e.target.value) || 0 };
+                            setLeaderboardStatsStructured(copy);
+                          }}
+                        />
+                        <input
+                          className="p-2 border border-border rounded bg-background text-foreground text-sm"
+                          placeholder="Player name"
+                          value={leader.player}
+                          onChange={(e) => {
+                            const copy = (leaderboardStatsStructured || []).slice();
+                            copy[ci].leaders[li] = { ...copy[ci].leaders[li], player: e.target.value };
+                            setLeaderboardStatsStructured(copy);
+                          }}
+                        />
+                        <div className="flex gap-2">
+                          <input
+                            className="flex-1 p-2 border border-border rounded bg-background text-foreground text-sm"
+                            placeholder="Value"
+                            value={leader.value}
+                            onChange={(e) => {
+                              const copy = (leaderboardStatsStructured || []).slice();
+                              copy[ci].leaders[li] = { ...copy[ci].leaders[li], value: e.target.value };
+                              setLeaderboardStatsStructured(copy);
+                            }}
+                          />
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => {
+                              const copy = (leaderboardStatsStructured || []).slice();
+                              copy[ci].leaders.splice(li, 1);
+                              setLeaderboardStatsStructured(copy);
+                            }}
+                            className="hover:bg-red-500/10"
+                          >
+                            <Trash2 className="w-3 h-3 md:w-4 md:h-4 text-red-500" />
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        const copy = (leaderboardStatsStructured || []).slice();
+                        copy[ci].leaders.push({ rank: (copy[ci].leaders.length || 0) + 1, player: "Player", value: "0" });
+                        setLeaderboardStatsStructured(copy);
+                      }}
+                      className="text-foreground hover:text-primary hover:bg-primary/10 text-xs md:text-sm"
+                    >
+                      <Plus className="w-3 h-3 md:w-4 md:h-4 mr-1" />
+                      Add Leader
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+              <Button
+                onClick={() => {
+                  const copy = (leaderboardStatsStructured || []).slice();
+                  copy.push({ title: "New Category", leaders: [{ rank: 1, player: "Player", value: "0" }] });
+                  setLeaderboardStatsStructured(copy);
+                }}
+                className="w-full bg-primary hover:bg-primary/90 text-white text-sm md:text-base"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Add New Category
+              </Button>
+            </div>
+          )}
+
+          {active === "banned-tactics" && bannedTacticsStructured && (
+            <div className="space-y-4 md:space-y-6">
+              <Card className="gaming-card">
+                <CardHeader className="p-4 md:p-6">
+                  <CardTitle>General Info</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 md:p-6 space-y-4">
+                  <div>
+                    <label className="block text-xs md:text-sm font-medium text-muted-foreground mb-2">
+                      Title
+                    </label>
+                    <input
+                      className="w-full p-2 border border-border rounded bg-background text-foreground text-sm md:text-base"
+                      value={bannedTacticsStructured.title}
+                      onChange={(e) => {
+                        const copy = { ...bannedTacticsStructured };
+                        copy.title = e.target.value;
+                        setBannedTacticsStructured(copy);
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs md:text-sm font-medium text-muted-foreground mb-2">
+                      Introduction
+                    </label>
+                    <textarea
+                      className="w-full p-2 md:p-3 border border-border rounded bg-background text-foreground min-h-[100px] text-sm md:text-base"
+                      value={bannedTacticsStructured.introduction}
+                      onChange={(e) => {
+                        const copy = { ...bannedTacticsStructured };
+                        copy.introduction = e.target.value;
+                        setBannedTacticsStructured(copy);
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs md:text-sm font-medium text-muted-foreground mb-2">
+                      Additional Note
+                    </label>
+                    <textarea
+                      className="w-full p-2 md:p-3 border border-border rounded bg-background text-foreground min-h-[80px] text-sm md:text-base"
+                      value={bannedTacticsStructured.additionalNote}
+                      onChange={(e) => {
+                        const copy = { ...bannedTacticsStructured };
+                        copy.additionalNote = e.target.value;
+                        setBannedTacticsStructured(copy);
+                      }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {(bannedTacticsStructured.tactics || []).map((tactic, ti) => (
+                <Card key={ti} className="gaming-card">
+                  <CardHeader className="p-4 md:p-6">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 md:gap-3">
+                      <input
+                        className="flex-1 p-2 border border-border rounded bg-background text-foreground font-semibold text-base md:text-lg"
+                        placeholder="Tactic Title"
+                        value={tactic.title}
+                        onChange={(e) => {
+                          const copy = { ...bannedTacticsStructured };
+                          copy.tactics[ti] = { ...copy.tactics[ti], title: e.target.value };
+                          setBannedTacticsStructured(copy);
+                        }}
+                      />
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => {
+                          const copy = { ...bannedTacticsStructured };
+                          copy.tactics.splice(ti, 1);
+                          setBannedTacticsStructured(copy);
+                        }}
+                        className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto text-xs md:text-sm"
+                      >
+                        <Trash2 className="w-3 h-3 md:w-4 md:h-4 mr-1" />
+                        Remove
+                      </Button>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-4 md:p-6 space-y-4">
+                    <div>
+                      <label className="block text-xs md:text-sm font-medium text-muted-foreground mb-2">
+                        Description
+                      </label>
+                      <textarea
+                        className="w-full p-2 md:p-3 border border-border rounded bg-background text-foreground min-h-[80px] text-sm md:text-base"
+                        value={tactic.description}
+                        onChange={(e) => {
+                          const copy = { ...bannedTacticsStructured };
+                          copy.tactics[ti] = { ...copy.tactics[ti], description: e.target.value };
+                          setBannedTacticsStructured(copy);
+                        }}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs md:text-sm font-medium text-muted-foreground mb-2">
+                        Exceptions
+                      </label>
+                      {(tactic.exceptions || []).map((exc, ei) => (
+                        <div key={ei} className="flex gap-2 mb-2">
+                          <textarea
+                            className="flex-1 p-2 border border-border rounded bg-background text-foreground min-h-[60px] text-sm"
+                            placeholder="Exception..."
+                            value={exc}
+                            onChange={(e) => {
+                              const copy = { ...bannedTacticsStructured };
+                              if (!copy.tactics[ti].exceptions) copy.tactics[ti].exceptions = [];
+                              copy.tactics[ti].exceptions![ei] = e.target.value;
+                              setBannedTacticsStructured(copy);
+                            }}
+                          />
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => {
+                              const copy = { ...bannedTacticsStructured };
+                              if (copy.tactics[ti].exceptions) {
+                                copy.tactics[ti].exceptions!.splice(ei, 1);
+                                setBannedTacticsStructured(copy);
+                              }
+                            }}
+                            className="hover:bg-red-500/10"
+                          >
+                            <Trash2 className="w-3 h-3 md:w-4 md:h-4 text-red-500" />
+                          </Button>
+                        </div>
+                      ))}
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          const copy = { ...bannedTacticsStructured };
+                          if (!copy.tactics[ti].exceptions) copy.tactics[ti].exceptions = [];
+                          copy.tactics[ti].exceptions!.push("New exception");
+                          setBannedTacticsStructured(copy);
+                        }}
+                        className="text-foreground hover:text-primary hover:bg-primary/10 text-xs md:text-sm"
+                      >
+                        <Plus className="w-3 h-3 md:w-4 md:h-4 mr-1" />
+                        Add Exception
+                      </Button>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs md:text-sm font-medium text-muted-foreground mb-2">
+                        Enforcement Notes
+                      </label>
+                      <textarea
+                        className="w-full p-2 md:p-3 border border-border rounded bg-background text-foreground min-h-[80px] text-sm md:text-base"
+                        placeholder="Optional enforcement notes..."
+                        value={tactic.enforcementNotes || ""}
+                        onChange={(e) => {
+                          const copy = { ...bannedTacticsStructured };
+                          copy.tactics[ti] = { ...copy.tactics[ti], enforcementNotes: e.target.value || undefined };
+                          setBannedTacticsStructured(copy);
+                        }}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+
+              <Button
+                onClick={() => {
+                  const copy = { ...bannedTacticsStructured };
+                  copy.tactics.push({
+                    title: "New Tactic",
+                    description: "Description...",
+                    exceptions: [],
+                    enforcementNotes: ""
+                  });
+                  setBannedTacticsStructured(copy);
+                }}
+                className="w-full bg-primary hover:bg-primary/90 text-white text-sm md:text-base"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Add New Tactic
+              </Button>
             </div>
           )}
         </div>

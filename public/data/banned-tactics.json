@@ -1,0 +1,47 @@
+{
+  "title": "Banned Tactics & Prohibited Actions",
+  "introduction": "The following tactics and actions are prohibited in Civ 3 League. This list covers known bugs and exploits that are not allowed. When in doubt, ask the community.",
+  "tactics": [
+    {
+      "title": "Distraction Contact",
+      "description": "Deliberately contacting enemies as a distraction is forbidden."
+    },
+    {
+      "title": "CTON Game Communication",
+      "description": "In CTON games, contacting players, streaming for players in game, or talking about anything remotely related to the game in play, is forbidden."
+    },
+    {
+      "title": "End-of-Turn Stack Attacks",
+      "description": "Stack attacks against cities must be resolved before the turn ends. If you start a stack attack against a city, you should leave enough time so that if the city was fully defended, combat could finish before the turn ended.",
+      "exceptions": [
+        "In the case of super large stacks, you're ok as long as you start the attack before 1/3 of the turn has elapsed.",
+        "EOT stack attacks are ok when recapturing cities that have just been taken, as long as the stack attack starts immediately after the initial attacking player captures the city. (Otherwise players would be incentivized to capture cities as close to end of turn as possible)."
+      ]
+    },
+    {
+      "title": "Gold Per Turn Trading",
+      "description": "You may not trade away gold per turn if you are intentionally running a large deficit with 0 gold in the treasury."
+    },
+    {
+      "title": "City Trading Restrictions",
+      "description": "Trading away cities is forbidden in future if the trade would leave you with only 1 city. In modern it's always prohibited."
+    },
+    {
+      "title": "Empty City Bug",
+      "description": "In some cases, a city will appear empty when all the units inside are killed, and the game will take a while before it registers the city as captured. This is known as the 'empty city bug'. In this case, the defending player should concede the city to the attacking player. If this would kill the defending player, they should not counter-attack or find any other way to benefit from the bug.",
+      "enforcementNotes": "Exploiting the empty city bug is discouraged. If you suspect someone will abuse this bug, take 2 screenshots of the empty city (with 2 different times on the in-game timer) as proof. Very short ECBs (less than 3 seconds) can be very hard to prove and typically aren't enforceable. But capturing or destroying a non-combat unit inside the city counts as proof of ECB even in this case."
+    },
+    {
+      "title": "City Gifting",
+      "description": "In modern, gifting cities (either by diplomacy or letting an ally take your city) is prohibited.",
+      "exceptions": [
+        "A player may gift a city to the player who planted that city. So if you lose a city to an enemy, your ally may retake that city and gift it back to you."
+      ]
+    },
+    {
+      "title": "Worker Kill Bug",
+      "description": "This is when a unit with 2 or more movement takes a non-combat unit, and then attacks a city immediately afterwards. It sometimes results in the attacker taking the city instantly, without any combat animation, even if there were many units defending the city. Taking a city this way is invalid."
+    }
+  ],
+  "additionalNote": "This list is not inclusive. There are many discovered bugs not listed here, because we don't want to give players ideas. When in doubt, ask the community."
+}

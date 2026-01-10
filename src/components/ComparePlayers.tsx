@@ -14,7 +14,7 @@ const PLAYER_COLORS = [
 ];
 
 export default function ComparePlayersFixed({ initial = [], compact = false, showTable = true, onPlayersChange }: Props) {
-  const modes: GameMode[] = ["Overall", "MPT", "Modern", "FUT", "QC", "MDJ", "UU", "CW"];
+  const modes: GameMode[] = ["Overall", "MPT", "Modern", "FUT", "QC", "MediMPT", "MDJ", "UU", "CW"];
   const [input, setInput] = useState("");
   const [players, setPlayers] = useState<string[]>(initial.map((p) => p.trim()).filter(Boolean));
   const [modeData, setModeData] = useState<Record<GameMode, LeaderboardEntry[]>>({} as any);

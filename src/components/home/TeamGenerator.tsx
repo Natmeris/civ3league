@@ -234,7 +234,7 @@ export default function TeamGenerator() {
     }
   };
 
-  const gameModes: GameMode[] = ["MPT", "Modern", "FUT", "QC", "MDJ", "UU", "CW", "Overall"];
+  const gameModes: GameMode[] = ["MPT", "Modern", "FUT", "QC", "MediMPT", "MDJ", "UU", "CW", "Overall"];
 
   return (
     <section className="py-12">
@@ -280,9 +280,10 @@ export default function TeamGenerator() {
                     <Button
                       onClick={handleAutofillTop8}
                       variant="outline"
-                      className="w-full text-foreground hover:text-primary hover:bg-primary/10"
+                      disabled={loading}
+                      className="w-full text-foreground hover:text-primary hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Autofill Top 8
+                      {loading ? "Loading..." : "Autofill Top 8"}
                     </Button>
                     <Button
                       onClick={() => { setNames(Array(8).fill("")); setResult(null); }}

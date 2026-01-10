@@ -408,13 +408,13 @@ const Leaderboard = () => {
           
           <CardContent>
             <Tabs value={activeMode} onValueChange={(value) => setActiveMode(value as GameMode)} className="w-full">
-              <TabsList className="grid w-full grid-cols-5 lg:grid-cols-8 mb-14 lg:mb-2 gap-2">
+              <TabsList className="grid w-full grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 mb-14 lg:mb-2 gap-1 sm:gap-2">
                 {(["Overall", "MPT", "Modern", "FUT", "QC", "MediMPT", "MDJ", "UU", "CW"] as GameMode[]).map((mode) => (
                   <TabsTrigger
                     key={mode}
                     value={mode}
                     className={cn(
-                      "active-leaderboard-tab font-bold border border-[var(--civ3-border)] shadow-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--civ3-border)] focus-visible:ring-offset-2 text-sm sm:text-base text-white hover:text-white",
+                      "active-leaderboard-tab font-bold border border-[var(--civ3-border)] shadow-md transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--civ3-border)] focus-visible:ring-offset-2 text-xs sm:text-sm md:text-base text-white hover:text-white px-2 py-1 sm:px-3",
                       activeMode === mode ? "" : "hover:bg-black"
                     )}
                   >

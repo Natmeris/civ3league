@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import Rules from "./pages/Rules";
+import BannedTactics from "./pages/BannedTactics";
 import Events from "./pages/Events";
 import EventDetails from "./pages/EventDetails";
 import Modes from "./pages/Modes";
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/rules" element={<Rules />} />
+          <Route path="/banned-tactics" element={<BannedTactics />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:id" element={<EventDetails />} />
           <Route path="/modes" element={<Modes />} />

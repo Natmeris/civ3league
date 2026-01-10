@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Overall Rating",
+    "leaders": [
+      { "rank": 1, "player": "Ironclad", "value": "2027" },
+      { "rank": 2, "player": "rabdag", "value": "1786" },
+      { "rank": 3, "player": "rever", "value": "1728" },
+      { "rank": 4, "player": "Halu", "value": "1699" },
+      { "rank": 5, "player": "Avogadro", "value": "1682" }
+    ]
+  },
+  {
+    "title": "Most Games",
+    "leaders": [
+      { "rank": 1, "player": "Halu", "value": "657" },
+      { "rank": 2, "player": "Silent Knight", "value": "457" },
+      { "rank": 3, "player": "maclunkey", "value": "444" },
+      { "rank": 4, "player": "Ironclad", "value": "418" },
+      { "rank": 5, "player": "Zardoz", "value": "410" }
+    ]
+  },
+  {
+    "title": "Most Wins",
+    "leaders": [
+      { "rank": 1, "player": "Halu", "value": "330" },
+      { "rank": 2, "player": "Silent Knight", "value": "246" },
+      { "rank": 3, "player": "maclunkey", "value": "235" },
+      { "rank": 4, "player": "Ironclad", "value": "227" },
+      { "rank": 5, "player": "Zardoz", "value": "207" }
+    ]
+  },
+  {
+    "title": "Highest Winrate (min 1 game every 2 weeks, so 26 games played)",
+    "leaders": [
+      { "rank": 1, "player": "Kylanater", "value": "71.7%" },
+      { "rank": 2, "player": "rabdag", "value": "59.1%" },
+      { "rank": 3, "player": "Santa", "value": "58.5%" },
+      { "rank": 4, "player": "Cid", "value": "58.2%" },
+      { "rank": 5, "player": "Private Pug", "value": "57.4%" }
+    ]
+  }
+]

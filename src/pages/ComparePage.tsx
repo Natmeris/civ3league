@@ -334,7 +334,7 @@ const ComparePage = () => {
   const playersParam = search.get('players') || '';
   const initialPlayers = playersParam ? playersParam.split(',').map(p=>decodeURIComponent(p).trim()).filter(Boolean) : [];
 
-  const modes: GameMode[] = ["Overall","MPT","Modern","FUT","QC","MDJ","UU","CW"];
+  const modes: GameMode[] = ["Overall","MPT","Modern","FUT","QC","MediMPT","MDJ","UU","CW"];
   const [modeData, setModeData] = useState<Record<GameMode, LeaderboardEntry[]>>({} as any);
   const [loading, setLoading] = useState(true);
   const [currentPlayers, setCurrentPlayers] = useState<string[]>(initialPlayers);

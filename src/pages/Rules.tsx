@@ -1,10 +1,12 @@
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 import { Shield, Users, AlertTriangle, Clock, Swords, FileWarning, BookOpen, MessageSquare } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { useEffect, useState, ComponentType } from "react";
+import { Link } from "react-router-dom";
 
 const Rules = () => {
   useDocumentTitle("Civ 3 League - Ladder Rules");
@@ -88,6 +90,26 @@ const Rules = () => {
             );
           })}
         </div>
+
+        {/* Banned Tactics Notice Card */}
+        <Card className="gaming-card border-red-500/30 bg-red-500/5 mb-12">
+          <CardContent className="p-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="flex gap-4 items-start">
+                <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Banned Tactics & Prohibited Actions</h3>
+                  <p className="text-muted-foreground">
+                    In addition to these rules, there are specific tactics and bug exploitations that are prohibited. Review the complete list of banned tactics to ensure you're playing fairly.
+                  </p>
+                </div>
+              </div>
+              <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white flex-shrink-0">
+                <Link to={`${import.meta.env.BASE_URL}banned-tactics`}>View Banned Tactics</Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Contact Section */}
         <Card className="gaming-card">
