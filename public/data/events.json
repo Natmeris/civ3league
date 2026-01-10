@@ -3,8 +3,8 @@
     "id": 1,
     "title": "ELO Champion Trophy 2025",
     "date": "December 31,2025 – January 1, 2026",
-    "status": "upcoming",
-    "description": "The race to become the ELO Champion of 2025 begins: who will it be this year?",
+    "status": "completed",
+    "description": "Congratulations to Ironclad on becoming the 2025 ELO Champion",
     "winners": "N/A",
     "participants": "All",
     "prize": "2025 Champion",
@@ -14,7 +14,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "The race to become the ELO Champion of 2025 begins: who will it be this year?"
+        "text": "The race to become the ELO Champion of 2025 came to an end. And the winner is Ironclad."
       }
     ]
   },
