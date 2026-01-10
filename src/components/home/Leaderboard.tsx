@@ -367,7 +367,7 @@ const Leaderboard = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <CardTitle className="flex items-center gap-2">
                 <Trophy className="w-6 h-6 text-primary" />
-                2025 Season Rankings
+                2026 Season Rankings
               </CardTitle>
               
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 w-full max-w-full">

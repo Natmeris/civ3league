@@ -12,14 +12,30 @@ interface StatCategory {
   }>;
 }
 
+interface FinalWinner {
+  rank: number;
+  player: string;
+  rating: number;
+  icon: any;
+  color: string;
+}
+
 const SeasonOverview = () => {
-  const finalWinners = [
-    { rank: 1, player: "Suede", rating: 2246, icon: Trophy, color: "text-yellow-500" },
-    { rank: 2, player: "cheeze", rating: 1963, icon: Medal, color: "text-gray-400" },
-    { rank: 3, player: "rabdag", rating: 1949, icon: Medal, color: "text-amber-600" },
-    { rank: 4, player: "rever", rating: 1832, icon: Target, color: "text-blue-500" },
-    { rank: 5, player: "Halu", rating: 1814, icon: Target, color: "text-green-500" },
-  ];
+  const [finalWinners, setFinalWinners] = useState<FinalWinner[]>([]);
+  const iconMap: Record<number, any> = {
+    1: Trophy,
+    2: Medal,
+    3: Medal,
+    4: Target,
+    5: Target,
+  };
+  const colorMap: Record<number, string> = {
+    1: "text-yellow-500",
+    2: "text-gray-400",
+    3: "text-amber-600",
+    4: "text-blue-500",
+    5: "text-green-500",
+  };
 
   const [stats, setStats] = useState<StatCategory[]>([
     {
@@ -58,7 +74,24 @@ const SeasonOverview = () => {
         );
         if (!res.ok) throw new Error('Failed to fetch leaderboard stats');
         const json = await res.json();
-        if (!cancelled) setStats(Array.isArray(json) ? json : []);
+        if (!cancelled) {
+          setStats(Array.isArray(json) ? json : []);
+          
+          // Extract final winners from Overall Rating data
+          if (Array.isArray(json) && json.length > 0) {
+            const overallRating = json.find((cat: StatCategory) => cat.title === "Overall Rating");
+            if (overallRating && overallRating.leaders) {
+              const winners = overallRating.leaders.map((leader: any) => ({
+                rank: leader.rank,
+                player: leader.player,
+                rating: parseInt(leader.value, 10),
+                icon: iconMap[leader.rank] || Trophy,
+                color: colorMap[leader.rank] || "text-white",
+              }));
+              setFinalWinners(winners);
+            }
+          }
+        }
       } catch (err) {
         console.error('Error loading leaderboard-stats.json', err);
       }
